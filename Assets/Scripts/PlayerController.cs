@@ -39,6 +39,9 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
+        // Disable player move inputs if game is stopped
+        inputDisabled = Time.timeScale == 0f;
+
         // Calculate the camera's forward and right directions
         Vector3 cameraForward = mainCamera.transform.forward;
         cameraForward.y = 0.0f;
@@ -52,7 +55,8 @@ public class PlayerController : MonoBehaviour
             Input.GetAxis("Vertical")
         );
             
-        if(!inputDisabled){
+        if(!inputDisabled)
+        {
             MovePlayer(movement, cameraForward, cameraRight);
 
             SetAnimation(movement);
