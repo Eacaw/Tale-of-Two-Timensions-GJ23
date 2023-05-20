@@ -17,6 +17,7 @@ public class PlayerController : MonoBehaviour
     private float moveSpeed;
     private float walkSpeed = 10.0f; 
     private float runSpeed = 16.0f;
+    private bool inputDisabled = false;
 
 
     private Vector3 cameraTargetPosition;
@@ -50,14 +51,16 @@ public class PlayerController : MonoBehaviour
             0.0f,
             Input.GetAxis("Vertical")
         );
-        
-        MovePlayer(movement, cameraForward, cameraRight);
+            
+        if(!inputDisabled){
+            MovePlayer(movement, cameraForward, cameraRight);
 
-        SetAnimation(movement);
+            SetAnimation(movement);
 
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            Jump();   
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                Jump();   
+            }
         }
 
         SetCamera();
