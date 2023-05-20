@@ -5,8 +5,6 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     // Have set default walk and run speed so it looks about right with the animations
-    public float walkSpeed = 2.0f; 
-    public float runSpeed = 4.0f;
     public float jumpHeight = 5.0f;
     public float cameraHeight = 15.0f;
     public float cameraDistance = 7.5f;
@@ -17,17 +15,21 @@ public class PlayerController : MonoBehaviour
     private Animator anim;
     
     private float moveSpeed;
+    private float walkSpeed = 10.0f; 
+    private float runSpeed = 16.0f;
 
 
     private Vector3 cameraTargetPosition;
     Transform cameraTransform;
 
     Collider playerCollider;
+    Rigidbody playerRigidBody;
 
     void Start()
     {
         anim = GetComponent<Animator>();
         playerCollider = GetComponent<Collider>();
+        playerRigidBody = GetComponent<Rigidbody>();
         moveSpeed = walkSpeed;
         cameraTransform = mainCamera.transform;
         // Set the camera target position to the initial camera position
@@ -36,42 +38,58 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        // --------------------------------------
-        // -----------Movement Controls----------
-        // --------------------------------------
-        float moveHorizontal = Input.GetAxis("Horizontal");
-        float moveVertical = Input.GetAxis("Vertical");
-
         // Calculate the camera's forward and right directions
         Vector3 cameraForward = mainCamera.transform.forward;
         cameraForward.y = 0.0f;
         cameraForward.Normalize();
         Vector3 cameraRight = mainCamera.transform.right;
 
-        // Handle player movement
+        // Get player movement
         Vector3 movement = new Vector3(
             Input.GetAxis("Horizontal"),
             0.0f,
             Input.GetAxis("Vertical")
         );
-        Vector3 movementDirection = cameraForward * movement.z + cameraRight * movement.x;
-        movementDirection.y = 0.0f; // Prevent player from moving up/down
-        movementDirection.Normalize();
-        transform.position += movementDirection * moveSpeed * Time.deltaTime;
+        
+        MovePlayer(movement, cameraForward, cameraRight);
 
-        // ------------------------------------
-        // ---------Animation Controls---------
-        // ------------------------------------
-        if (movementDirection != Vector3.zero)
+        SetAnimation(movement);
+
+        if (Input.GetKeyDown(KeyCode.Space))
         {
+            Jump();   
+        }
+
+        SetCamera();
+    }
+
+    void Jump() {
+        // If the player is jumping or falling, you can't jump
+        if (playerRigidBody.velocity.y == 0)
+        {
+            anim.SetTrigger("isJumping");
+            playerRigidBody.AddForce(Vector3.up * jumpHeight, ForceMode.Impulse);
+        }
+    }
+
+    void MovePlayer(Vector3 movement, Vector3 cameraForward, Vector3 cameraRight){
+        if (movement != Vector3.zero){
+            Vector3 movementDirection = cameraForward * movement.z + cameraRight * movement.x;
+            movementDirection.y = 0.0f; // Prevent player from moving up/down
+            movementDirection.Normalize();
+            transform.position += movementDirection * moveSpeed * Time.deltaTime;
+
             // Also controlling the player model's rotation here
             transform.rotation = Quaternion.Slerp(
                 transform.rotation,
                 Quaternion.LookRotation(movementDirection),
                 rotationSpeed * Time.deltaTime
             );
+        }
+    }
 
-
+    void SetAnimation(Vector3 movement) {
+        if (movement != Vector3.zero){
             anim.SetBool("isWalking", true);
 
             if (Input.GetKey(KeyCode.LeftShift))
@@ -84,21 +102,14 @@ public class PlayerController : MonoBehaviour
                 anim.SetBool("isRunning", false);
                 moveSpeed = walkSpeed;
             }
-            if (Input.GetKeyDown(KeyCode.Space))
-            {
-                anim.SetTrigger("isJumping");
-                GetComponent<Rigidbody>().AddForce(Vector3.up * jumpHeight, ForceMode.Impulse);
-            }
-        }
-        else
+        } else
         {
             anim.SetBool("isRunning", false);
             anim.SetBool("isWalking", false);
         }
+    }
 
-        // ---------------------------------
-        // ---------Camera Controls---------
-        // ---------------------------------
+    void SetCamera() {
         float cameraXOffset = cameraDistance;
         float cameraYOffset = cameraDistance;
 
@@ -118,4 +129,5 @@ public class PlayerController : MonoBehaviour
         );
         cameraTransform.LookAt(transform.position);
     }
+    
 }
