@@ -68,7 +68,7 @@ public class PlayerController : MonoBehaviour
 
     void Jump() {
         // If the player is jumping or falling, you can't jump
-        if (playerRigidBody.velocity.y == 0)
+        if (playerRigidBody.velocity.y <= 0 && playerRigidBody.velocity.y > -0.25f)
         {
             anim.SetTrigger("isJumping");
             playerRigidBody.AddForce(Vector3.up * jumpHeight, ForceMode.Impulse);
