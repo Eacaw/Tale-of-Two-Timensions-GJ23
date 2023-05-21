@@ -146,12 +146,12 @@ public class PlayerController : MonoBehaviour
 
     void TeleportPlayer() {
         Debug.Log(SceneManager.GetActiveScene().buildIndex);
-        if(SceneManager.GetActiveScene().buildIndex == 0)
+        if(SceneManager.GetActiveScene().buildIndex == 1)
         {
-            SceneManager.LoadScene(1);
+            SceneManager.LoadScene(2);
         } else
         {
-            SceneManager.LoadScene(0);
+            SceneManager.LoadScene(1);
         }
     }
     
