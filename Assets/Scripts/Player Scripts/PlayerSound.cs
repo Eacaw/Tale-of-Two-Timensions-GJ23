@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerFootsteps : MonoBehaviour
+public class PlayerSound : MonoBehaviour
 {
     [Header("FMOD Settings")]
     [SerializeField] private FMODUnity.EventReference FootstepsEventPath;
