@@ -2,8 +2,6 @@ using UnityEngine;
 
 public class FireFlicker : MonoBehaviour
 {
-    // Light script to give a light the flickering effect of a fire
-
     public float minIntensity = 4f;
     public float maxIntensity = 5f;
     public float flickerSpeed = 5f;
