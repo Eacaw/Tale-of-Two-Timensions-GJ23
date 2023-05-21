@@ -5,12 +5,14 @@ public class NPCController : MonoBehaviour
     public float detectionRadius = 5f;
     private Transform player;
 
+    public Light npcIndicatorLight;
+
     public string npcName = "NPC";
 
     private void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;
-    
+        npcIndicatorLight.intensity = 0;
     }
 
     private void Update()
@@ -36,5 +38,15 @@ public class NPCController : MonoBehaviour
     public void OnMouseDown()
     {
         Debug.Log("Player clicked on " + npcName + "!");
+    }
+
+    public void OnMouseEnter()
+    {
+        npcIndicatorLight.intensity = 5;
+    }
+
+    public void OnMouseExit()
+    {
+        npcIndicatorLight.intensity = 0;
     }
 }
