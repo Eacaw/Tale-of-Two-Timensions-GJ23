@@ -17,9 +17,9 @@ public class NPCController : MonoBehaviour
 
     private void Update()
     {
-         if (Vector3.Distance(transform.position, player.position) <= detectionRadius)
+        if (Vector3.Distance(transform.position, player.position) <= detectionRadius)
         {
-           LookAtPlayer();
+            LookAtPlayer();
         }
     }
 
@@ -30,8 +30,14 @@ public class NPCController : MonoBehaviour
             Vector3 targetPosition = player.position;
             targetPosition.y = transform.position.y; // Ignore vertical difference
 
-            Quaternion targetRotation = Quaternion.LookRotation(targetPosition - transform.position);
-            transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime * 5f);
+            Quaternion targetRotation = Quaternion.LookRotation(
+                targetPosition - transform.position
+            );
+            transform.rotation = Quaternion.Slerp(
+                transform.rotation,
+                targetRotation,
+                Time.deltaTime * 5f
+            );
         }
     }
 
