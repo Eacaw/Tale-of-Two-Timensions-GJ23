@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -64,6 +66,11 @@ public class PlayerController : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.Space))
             {
                 Jump();   
+            }
+
+            if (Input.GetKeyDown(KeyCode.R))
+            {
+               TeleportPlayer();
             }
         }
 
@@ -135,6 +142,17 @@ public class PlayerController : MonoBehaviour
             transform.position.z + cameraYOffset
         );
         cameraTransform.LookAt(transform.position);
+    }
+
+    void TeleportPlayer() {
+        Debug.Log(SceneManager.GetActiveScene().buildIndex);
+        if(SceneManager.GetActiveScene().buildIndex == 0)
+        {
+            SceneManager.LoadScene(1);
+        } else
+        {
+            SceneManager.LoadScene(0);
+        }
     }
     
 }
