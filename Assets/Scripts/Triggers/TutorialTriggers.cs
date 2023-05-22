@@ -18,12 +18,11 @@ public class TutorialTriggers : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
-            Canvas otherCanvas = FindFirstObjectByType<Canvas>();
-            if(otherCanvas)
+            // Find any other game objects with the tag "InstructionUI" and set them to inactive
+            GameObject[] instructionUIs = GameObject.FindGameObjectsWithTag("InstructionalUI");
+            foreach (GameObject instructionUI in instructionUIs)
             {
-                // This seems to work but idfk where it goes cuase it's
-                // still shown as dispalyed in hierarchy shrugz
-                otherCanvas.enabled = false;
+                instructionUI.SetActive(false);
             }
 
             // Ensure trigger isn't hit more than once
