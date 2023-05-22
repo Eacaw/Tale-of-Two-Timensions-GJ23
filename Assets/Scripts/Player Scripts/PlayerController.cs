@@ -32,6 +32,8 @@ public class PlayerController : MonoBehaviour
 
     void Start()
     {
+        DontDestroyOnLoad(this.gameObject);
+
         anim = GetComponent<Animator>();
         playerCollider = GetComponent<Collider>();
         playerRigidBody = GetComponent<Rigidbody>();
@@ -147,7 +149,6 @@ public class PlayerController : MonoBehaviour
     }
 
     void TeleportPlayer() {
-        Debug.Log(SceneManager.GetActiveScene().buildIndex);
         if(SceneManager.GetActiveScene().buildIndex == 1)
         {
             SceneManager.LoadScene(2);
