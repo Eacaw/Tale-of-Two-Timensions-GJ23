@@ -16,7 +16,7 @@ public class PlayerSound : MonoBehaviour
     [SerializeField] private float RayDistance = 1.2f;
     [SerializeField] private float StartRunningTime = 0.3f;
     [SerializeField] private string JumpInputName;
-    [SerializeField] private GameObject gameObject;
+    [SerializeField] private GameObject dummyPoint;
 
     private float StepRandom;
     private Vector3 PrevPos;
@@ -25,15 +25,15 @@ public class PlayerSound : MonoBehaviour
     private RaycastHit hit;
     private bool isJumping = false;
     private float TimeTakenSinceStep;
-    // Used to set the parameter in FMOD, if 0 then walking, if 1 then running
-    private int F_PlayerRunning;
+
+    private FMOD.Studio.Bus masterBus;
 
     // Start is called before the first frame update
     void Start()
     {
         StepRandom = Random.Range(0f, 0.5f);
         PrevPos = transform.position;
-        Debug.Log(PrevPos);
+        masterBus = FMODUnity.RuntimeManager.GetBus("Bus:/");
     }
 
     // Update is called once per frame
@@ -52,7 +52,6 @@ public class PlayerSound : MonoBehaviour
                 if (DistanceTravelled >= StepDistance + StepRandom)
                 {
                     SpeedCheck();
-                    //PlayFootstep();
                     StepRandom = Random.Range(0f, 0.5f);
                     DistanceTravelled = 0f;
                 }
@@ -63,6 +62,8 @@ public class PlayerSound : MonoBehaviour
     }
 
     void PlayTeleport() {
+        masterBus.stopAllEvents(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+
         FMOD.Studio.EventInstance teleport = FMODUnity.RuntimeManager.CreateInstance(TeleportEventPath);
         FMODUnity.RuntimeManager.AttachInstanceToGameObject(teleport, transform, GetComponent<Rigidbody>());
 
@@ -71,7 +72,7 @@ public class PlayerSound : MonoBehaviour
     }
 
     bool JumpCheck() {
-        Physics.Raycast(gameObject.transform.position, Vector3.down, out hit, RayDistance);
+        Physics.Raycast(dummyPoint.transform.position, Vector3.down, out hit, RayDistance);
 
         if (hit.collider)
         {
@@ -97,6 +98,12 @@ public class PlayerSound : MonoBehaviour
     }
 
     void PlayJumpOrLand(bool F_JumpLandCalc) {
+        if (F_JumpLandCalc)
+        {
+            masterBus.stopAllEvents(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+        }
+
+
         FMOD.Studio.EventInstance jumpLand = FMODUnity.RuntimeManager.CreateInstance(JumpEventPath);
         FMODUnity.RuntimeManager.AttachInstanceToGameObject(jumpLand, transform, GetComponent<Rigidbody>());
 
@@ -108,20 +115,21 @@ public class PlayerSound : MonoBehaviour
     void SpeedCheck() {
         if (TimeTakenSinceStep < StartRunningTime)
         {
-            F_PlayerRunning = 1;
+            PlayFootstep(false);
         }
         else {
-            F_PlayerRunning = 0;    
+            PlayFootstep(true);
         }
 
         TimeTakenSinceStep = 0f;
     }
 
-    void PlayFootstep() {
+    void PlayFootstep(bool F_PlayerRunning) {
         FMOD.Studio.EventInstance footstep = FMODUnity.RuntimeManager.CreateInstance(FootstepsEventPath);
         FMODUnity.RuntimeManager.AttachInstanceToGameObject(footstep, transform, GetComponent<Rigidbody>());
 
-        footstep.setParameterByName(SpeedParameterName, F_PlayerRunning);
+
+        footstep.setParameterByName(SpeedParameterName, F_PlayerRunning ? 0f : 1f);
         footstep.start();
         footstep.release();
     }

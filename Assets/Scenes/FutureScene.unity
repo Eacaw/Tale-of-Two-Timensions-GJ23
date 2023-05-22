@@ -20679,13 +20679,13 @@ MonoBehaviour:
       Data3: -644422477
       Data4: 1479786500
     Path: event:/Teleport
-  SpeedParameterName: Speed Switch
+  SpeedParameterName: Walk Or Run
   JumpOrLandParameterName: Jump Or Land
   StepDistance: 2
   RayDistance: 4
-  StartRunningTime: 0.3
+  StartRunningTime: 0.2
   JumpInputName: Space
-  gameObject: {fileID: 713979665}
+  dummyPoint: {fileID: 713979665}
 --- !u!1001 &6739209470859058526
 PrefabInstance:
   m_ObjectHideFlags: 0
