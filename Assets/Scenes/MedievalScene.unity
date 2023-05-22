@@ -1796,6 +1796,7 @@ MonoBehaviour:
   invertCameraYAxis: 0
   rotationSpeed: 120
   mainCamera: {fileID: 963194227}
+  hasKey: 0
 --- !u!95 &2923696350229562546
 Animator:
   serializedVersion: 5
@@ -1886,7 +1887,7 @@ MonoBehaviour:
   RayDistance: 4
   StartRunningTime: 0.3
   JumpInputName: Space
-  gameObject: {fileID: 1278411504}
+  dummyPoint: {fileID: 1278411504}
 --- !u!1001 &7148828671362369220
 PrefabInstance:
   m_ObjectHideFlags: 0

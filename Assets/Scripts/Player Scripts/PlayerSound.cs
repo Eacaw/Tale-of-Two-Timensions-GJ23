@@ -16,7 +16,7 @@ public class PlayerSound : MonoBehaviour
     [SerializeField] private float RayDistance = 1.2f;
     [SerializeField] private float StartRunningTime = 0.3f;
     [SerializeField] private string JumpInputName;
-    [SerializeField] private GameObject dummyPoint;
+    [SerializeField] private GameObject ghostPoint;
 
     private float StepRandom;
     private Vector3 PrevPos;
