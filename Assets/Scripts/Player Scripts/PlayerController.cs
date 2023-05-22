@@ -21,6 +21,8 @@ public class PlayerController : MonoBehaviour
     private float runSpeed = 16.0f;
     private bool inputDisabled = false;
 
+    public bool hasKey = false;
+
 
     private Vector3 cameraTargetPosition;
     Transform cameraTransform;

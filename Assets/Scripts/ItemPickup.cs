@@ -20,6 +20,11 @@ public class ItemPickup : MonoBehaviour
 
         canvasRenderer.SetAlpha(100);
 
+        if(gameObject.CompareTag("Key"))
+        {
+            GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>().hasKey = true;
+        }
+
         // Also add the item to the player's inventory
     }
 
