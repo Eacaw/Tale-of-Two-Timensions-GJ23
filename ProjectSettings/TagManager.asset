@@ -7,6 +7,7 @@ TagManager:
   - NPC
   - Backpack
   - InstructionalUI
+  - Key
   layers:
   - Default
   - TransparentFX

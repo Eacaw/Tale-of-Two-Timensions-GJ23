@@ -19,14 +19,6 @@ public class PlayerInput : MonoBehaviour
                         npc.OnMouseDown();
                     }
                 }
-                if (hit.collider.CompareTag("Backpack"))
-                {
-                    BackpackPickup backpack = hit.collider.GetComponent<BackpackPickup>();
-                    if (backpack != null)
-                    {
-                        backpack.OnMouseDown();
-                    }
-                }
             }
         }
     }
