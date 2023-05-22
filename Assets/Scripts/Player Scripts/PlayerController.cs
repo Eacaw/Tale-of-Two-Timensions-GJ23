@@ -30,6 +30,8 @@ public class PlayerController : MonoBehaviour
 
     void Start()
     {
+        DontDestroyOnLoad(this.gameObject);
+
         anim = GetComponent<Animator>();
         playerCollider = GetComponent<Collider>();
         playerRigidBody = GetComponent<Rigidbody>();
