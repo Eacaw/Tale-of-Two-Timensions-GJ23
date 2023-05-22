@@ -2,11 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerFootsteps : MonoBehaviour
+public class PlayerSound : MonoBehaviour
 {
     [Header("FMOD Settings")]
     [SerializeField] private FMODUnity.EventReference FootstepsEventPath;
     [SerializeField] private FMODUnity.EventReference JumpEventPath;
+    [SerializeField] private FMODUnity.EventReference TeleportEventPath;
     [SerializeField] private string SpeedParameterName;
     [SerializeField] private string JumpOrLandParameterName;
 
@@ -41,19 +42,32 @@ public class PlayerFootsteps : MonoBehaviour
         TimeTakenSinceStep += Time.deltaTime;
         DistanceTravelled += (transform.position - PrevPos).magnitude;
 
-        // Only want to play a footstep sound if player is grounded
-        if (!JumpCheck())
+        if (Input.GetKeyDown(KeyCode.R))
         {
-            if (DistanceTravelled >= StepDistance + StepRandom)
+            PlayTeleport();
+        }
+        else {
+            if (!JumpCheck())
             {
-                SpeedCheck();
-                PlayFootstep();
-                StepRandom = Random.Range(0f, 0.5f);
-                DistanceTravelled = 0f;
+                if (DistanceTravelled >= StepDistance + StepRandom)
+                {
+                    SpeedCheck();
+                    //PlayFootstep();
+                    StepRandom = Random.Range(0f, 0.5f);
+                    DistanceTravelled = 0f;
+                }
             }
         }
 
         PrevPos = transform.position;
+    }
+
+    void PlayTeleport() {
+        FMOD.Studio.EventInstance teleport = FMODUnity.RuntimeManager.CreateInstance(TeleportEventPath);
+        FMODUnity.RuntimeManager.AttachInstanceToGameObject(teleport, transform, GetComponent<Rigidbody>());
+
+        teleport.start();
+        teleport.release();
     }
 
     bool JumpCheck() {
@@ -63,7 +77,7 @@ public class PlayerFootsteps : MonoBehaviour
         {
             if (isJumping) {
                 // Just landed
-                PlayJumpOrLand(true);
+                PlayJumpOrLand(false);
                 DistanceTravelled = 0f;
             }
 
@@ -74,7 +88,7 @@ public class PlayerFootsteps : MonoBehaviour
         else {
             // If is jumping is false, player has only just jumped so play jump sound
             if (!isJumping) {
-                PlayJumpOrLand(false);
+                PlayJumpOrLand(true);
                 isJumping = true;
             }
 
