@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class EndMenu : MonoBehaviour
 {
     public void ReturnToMain() {
+        Destroy(GameObject.FindGameObjectsWithTag("Player")[0]);
         SceneManager.LoadScene(0);
     }
 
