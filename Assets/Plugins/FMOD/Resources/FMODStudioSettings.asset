@@ -442,6 +442,7 @@ MonoBehaviour:
   MasterBanks:
   - Master
   Banks:
+  - Ambience
   - Player
   BanksToLoad: []
   LiveUpdatePort: 9264
