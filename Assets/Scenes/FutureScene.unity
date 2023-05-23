@@ -307,8 +307,6 @@ MonoBehaviour:
   hoverIndicatorLight: {fileID: 1896286460}
   destination: {fileID: 638711097}
   isLocked: 1
-  lockedMessage: {fileID: 0}
-  lockedMessage2: {fileID: 0}
 --- !u!65 &12636164
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1475,8 +1473,6 @@ MonoBehaviour:
   hoverIndicatorLight: {fileID: 1760766125}
   destination: {fileID: 664962689}
   isLocked: 1
-  lockedMessage: {fileID: 0}
-  lockedMessage2: {fileID: 0}
 --- !u!65 &77879910
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10134,7 +10130,7 @@ Light:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingLayerMask: 1
-  m_Lightmapping: 1
+  m_Lightmapping: 4
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 2.64
