@@ -21,7 +21,9 @@ public class PlayerController : MonoBehaviour
     private float runSpeed = 16.0f;
     private bool inputDisabled = false;
 
+    public bool hasBackpack = false;
     public bool hasKey = false;
+    public bool hasAmulet = false;
 
 
     private Vector3 cameraTargetPosition;

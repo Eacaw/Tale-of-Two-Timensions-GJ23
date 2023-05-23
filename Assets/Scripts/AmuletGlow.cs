@@ -9,9 +9,8 @@ public class AmuletGlow : MonoBehaviour
     public Light glowLight;
     private float lightIntensity;
     private float lightRange;
-    private float lightSpeed = 1f;
-    private float lightMaxIntensity = 2f;
-    private float lightMaxRange = 0.75f;
+    private float lightSpeed = 2f;
+    private float lightMaxIntensity = 4f;
 
     private void Start()
     {

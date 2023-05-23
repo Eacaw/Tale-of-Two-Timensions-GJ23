@@ -6,32 +6,56 @@ public class ItemPickup : MonoBehaviour
 {
     public Light hoverIndicatorLight;
     public CanvasRenderer canvasRenderer;
+    private GameObject player;
+    private PlayerController playerController;
 
     private void Start()
     {
         hoverIndicatorLight.intensity = 0;
 
+        // Hide the GUI icon for this item
         canvasRenderer.SetAlpha(0);
+
+        player = GameObject.FindGameObjectWithTag("Player");
+        playerController = player.GetComponent<PlayerController>();
+
+
     }
+
 
     public void OnMouseDown()
     {
-        Destroy(gameObject);
-
-        canvasRenderer.SetAlpha(100);
-
-        if (gameObject.CompareTag("Key"))
+        if (gameObject.CompareTag("Backpack"))
         {
-            GameObject.FindGameObjectWithTag("Player")
-            .GetComponent<PlayerController>()
-            .hasKey = true;
+            playerController.hasBackpack = true;
         }
 
-        GameObject
-            .FindGameObjectWithTag("Player")
-            .GetComponent<Animator>()
-            .SetTrigger("pickupItem");
-        // Also add the item to the player's inventory
+        if (!playerController.hasBackpack)
+        {
+            Debug.Log("You need a backpack to pick up items");
+            return;
+        }
+
+        if (Vector3.Distance(transform.position, player.transform.position) > 6.0f)
+        {
+            Debug.Log("Too far away to pick up item");
+            return;
+        }
+
+        // Pickup objects and update player controller
+        if (gameObject.CompareTag("Key"))
+        {
+            playerController.hasKey = true;
+        }
+
+        if (gameObject.CompareTag("Amulet"))
+        {
+            playerController.hasAmulet = true;
+        }
+
+        player.GetComponent<Animator>().SetTrigger("pickupItem");
+        canvasRenderer.SetAlpha(100);
+        Destroy(gameObject);
     }
 
     public void OnMouseEnter()
