@@ -738,7 +738,7 @@ MonoBehaviour:
   RayDistance: 4
   StartRunningTime: 0.3
   JumpInputName: Space
-  dummyPoint: {fileID: 892311438}
+  ghostPoint: {fileID: 892311438}
 --- !u!114 &72102138
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -758,7 +758,9 @@ MonoBehaviour:
   invertCameraYAxis: 0
   rotationSpeed: 120
   mainCamera: {fileID: 1118824770}
+  hasBackpack: 0
   hasKey: 0
+  hasAmulet: 0
 --- !u!95 &72102139
 Animator:
   serializedVersion: 5
