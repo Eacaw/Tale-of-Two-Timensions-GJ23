@@ -6,52 +6,55 @@ public class ItemPickup : MonoBehaviour
 {
     public Light hoverIndicatorLight;
     public CanvasRenderer canvasRenderer;
+    private GameObject player;
+    private PlayerController playerController;
 
     private void Start()
     {
         hoverIndicatorLight.intensity = 0;
 
+        // Hide the GUI icon for this item
         canvasRenderer.SetAlpha(0);
+
+        player = GameObject.FindGameObjectWithTag("Player");
+        playerController = player.GetComponent<PlayerController>();
+
+
     }
+
 
     public void OnMouseDown()
     {
-        canvasRenderer.SetAlpha(100);
-
-        // If it's the backpack, update the player's inventory
         if (gameObject.CompareTag("Backpack"))
         {
-            GameObject.FindGameObjectWithTag("Player")
-            .GetComponent<PlayerController>()
-            .hasBackpack = true;
+            playerController.hasBackpack = true;
         }
 
-        // Only allow picking up other items if the player has a backpack
-        if(!GameObject.FindGameObjectWithTag("Player")
-            .GetComponent<PlayerController>()
-            .hasBackpack)
+        if (!playerController.hasBackpack)
         {
+            Debug.Log("You need a backpack to pick up items");
             return;
         }
-        // Functional Game Objects
+
+        if (Vector3.Distance(transform.position, player.transform.position) > 6.0f)
+        {
+            Debug.Log("Too far away to pick up item");
+            return;
+        }
+
+        // Pickup objects and update player controller
         if (gameObject.CompareTag("Key"))
         {
-            GameObject.FindGameObjectWithTag("Player")
-            .GetComponent<PlayerController>()
-            .hasKey = true;
+            playerController.hasKey = true;
         }
 
         if (gameObject.CompareTag("Amulet"))
         {
-            GameObject.FindGameObjectWithTag("Player")
-            .GetComponent<PlayerController>()
-            .hasAmulet = true;
+            playerController.hasAmulet = true;
         }
 
-        GameObject
-            .FindGameObjectWithTag("Player")
-            .GetComponent<Animator>()
-            .SetTrigger("pickupItem");
+        player.GetComponent<Animator>().SetTrigger("pickupItem");
+        canvasRenderer.SetAlpha(100);
         Destroy(gameObject);
     }
 
