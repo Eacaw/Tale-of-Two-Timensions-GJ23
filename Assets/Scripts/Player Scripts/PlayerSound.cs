@@ -72,7 +72,7 @@ public class PlayerSound : MonoBehaviour
     }
 
     bool JumpCheck() {
-        Physics.Raycast(dummyPoint.transform.position, Vector3.down, out hit, RayDistance);
+        Physics.Raycast(ghostPoint.transform.position, Vector3.down, out hit, RayDistance);
 
         if (hit.collider)
         {
