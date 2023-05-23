@@ -16,6 +16,7 @@ public class NPCController : MonoBehaviour
         npcChatUI.SetActive(false);
         player = GameObject.FindGameObjectWithTag("Player").transform;
         npcIndicatorLight.intensity = 0;
+        DisplayNPCName();
     }
 
     private void Update()
@@ -42,6 +43,22 @@ public class NPCController : MonoBehaviour
                 Time.deltaTime * 5f
             );
         }
+    }
+
+    private void DisplayNPCName()
+    {
+        GameObject nameText = new GameObject("NPC Name");
+        nameText.transform.SetParent(transform);
+        nameText.transform.position = transform.position + new Vector3(0, 4f, 0);
+        TextMesh textMesh = nameText.AddComponent<TextMesh>();
+        textMesh.text = npcName;
+        textMesh.fontSize = 50;
+        textMesh.anchor = TextAnchor.MiddleCenter;
+        textMesh.alignment = TextAlignment.Center;
+        nameText.transform.rotation =
+            Quaternion.LookRotation(transform.forward) * Quaternion.Euler(0, 180, 0);
+        nameText.transform.localScale = new Vector3(0.1f, 0.1f, 0.1f);
+        textMesh.color = Color.grey;
     }
 
     public void OnMouseDown()
