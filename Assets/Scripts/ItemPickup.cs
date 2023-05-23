@@ -16,8 +16,6 @@ public class ItemPickup : MonoBehaviour
 
     public void OnMouseDown()
     {
-        Destroy(gameObject);
-
         canvasRenderer.SetAlpha(100);
 
         // If it's the backpack, update the player's inventory
@@ -54,7 +52,7 @@ public class ItemPickup : MonoBehaviour
             .FindGameObjectWithTag("Player")
             .GetComponent<Animator>()
             .SetTrigger("pickupItem");
-        // Also add the item to the player's inventory
+        Destroy(gameObject);
     }
 
     public void OnMouseEnter()
