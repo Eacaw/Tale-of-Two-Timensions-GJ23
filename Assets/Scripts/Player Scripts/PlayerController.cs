@@ -15,16 +15,15 @@ public class PlayerController : MonoBehaviour
     public float rotationSpeed = 120.0f;
     public Camera mainCamera;
     private Animator anim;
-    
+
     private float moveSpeed;
-    private float walkSpeed = 10.0f; 
+    private float walkSpeed = 10.0f;
     private float runSpeed = 16.0f;
     private bool inputDisabled = false;
 
     public bool hasBackpack = false;
     public bool hasKey = false;
     public bool hasAmulet = false;
-
 
     private Vector3 cameraTargetPosition;
     Transform cameraTransform;
@@ -62,54 +61,65 @@ public class PlayerController : MonoBehaviour
             0.0f,
             Input.GetAxis("Vertical")
         );
-            
-        if(!inputDisabled)
+
+        if (!inputDisabled)
         {
             MovePlayer(movement, cameraForward, cameraRight);
-
             SetAnimation(movement);
 
             if (Input.GetKeyDown(KeyCode.Space))
             {
-                Jump();   
+                Jump();
             }
 
             if (Input.GetKeyDown(KeyCode.R))
             {
-               TeleportPlayer();
+                TeleportPlayer();
             }
         }
 
         SetCamera();
     }
 
-    void Jump() {
+    void Jump()
+    {
         // If the player is jumping or falling, you can't jump
         if (playerRigidBody.velocity.y <= 0 && playerRigidBody.velocity.y > -0.25f)
         {
             anim.SetTrigger("isJumping");
-            playerRigidBody.AddForce(Vector3.up * jumpHeight, ForceMode.Impulse);
+            playerRigidBody.AddForce(Vector3.up * jumpHeight, ForceMode.VelocityChange);
         }
     }
 
-    void MovePlayer(Vector3 movement, Vector3 cameraForward, Vector3 cameraRight){
-        if (movement != Vector3.zero){
+    void MovePlayer(Vector3 movement, Vector3 cameraForward, Vector3 cameraRight)
+    {
+        if (movement != Vector3.zero)
+        {
             Vector3 movementDirection = cameraForward * movement.z + cameraRight * movement.x;
-            movementDirection.y = 0.0f; // Prevent player from moving up/down
             movementDirection.Normalize();
-            transform.position += movementDirection * moveSpeed * Time.deltaTime;
 
-            // Also controlling the player model's rotation here
+            bool isRunning = Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift);
+
+            float speed = isRunning ? runSpeed : walkSpeed;
+
+            playerRigidBody.velocity = movementDirection * speed;
+
             transform.rotation = Quaternion.Slerp(
                 transform.rotation,
                 Quaternion.LookRotation(movementDirection),
                 rotationSpeed * Time.deltaTime
             );
         }
+        else
+        {
+            playerRigidBody.velocity = Vector3.zero;
+        }
     }
 
-    void SetAnimation(Vector3 movement) {
-        if (movement != Vector3.zero){
+    void SetAnimation(Vector3 movement)
+    {
+        if (movement != Vector3.zero)
+        {
             anim.SetBool("isWalking", true);
 
             if (Input.GetKey(KeyCode.LeftShift))
@@ -122,22 +132,26 @@ public class PlayerController : MonoBehaviour
                 anim.SetBool("isRunning", false);
                 moveSpeed = walkSpeed;
             }
-        } else
+        }
+        else
         {
             anim.SetBool("isRunning", false);
             anim.SetBool("isWalking", false);
         }
     }
 
-    void SetCamera() {
+    void SetCamera()
+    {
         float cameraXOffset = cameraDistance;
         float cameraYOffset = cameraDistance;
 
         // Inverting the camera axis
-        if(invertCameraXAxis){
+        if (invertCameraXAxis)
+        {
             cameraXOffset = -cameraDistance;
         }
-        if(invertCameraYAxis){
+        if (invertCameraYAxis)
+        {
             cameraYOffset = -cameraDistance;
         }
 
@@ -150,14 +164,15 @@ public class PlayerController : MonoBehaviour
         cameraTransform.LookAt(transform.position);
     }
 
-    void TeleportPlayer() {
-        if(SceneManager.GetActiveScene().buildIndex == 1)
+    void TeleportPlayer()
+    {
+        if (SceneManager.GetActiveScene().buildIndex == 1)
         {
             SceneManager.LoadScene(2);
-        } else
+        }
+        else
         {
             SceneManager.LoadScene(1);
         }
     }
-    
 }
