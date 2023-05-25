@@ -15,13 +15,15 @@ public class Doorway : MonoBehaviour
 
     public void OnMouseDown()
     {
-        // If the door is locked and hte player doesnt have the key, return
         if (
             isLocked
             && GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>().hasKey
                 == false
-        ) { }
-        // Move the player to the destination
+        )
+        {
+            return;
+        }
+
         GameObject player = GameObject.FindGameObjectWithTag("Player");
         player.transform.position = destination.position;
     }
