@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 public class PlayerController : MonoBehaviour
 {
     // Have set default walk and run speed so it looks about right with the animations
-    public float jumpHeight = 5.0f;
+    public float jumpHeight = 15.0f;
     public float cameraHeight = 15.0f;
     public float cameraDistance = 7.5f;
     public bool invertCameraXAxis = false;
@@ -20,6 +20,7 @@ public class PlayerController : MonoBehaviour
     private float walkSpeed = 10.0f;
     private float runSpeed = 16.0f;
     private bool inputDisabled = false;
+    private float gravity = 5f;
 
     public bool hasBackpack = false;
     public bool hasKey = false;
@@ -102,7 +103,8 @@ public class PlayerController : MonoBehaviour
 
             float speed = isRunning ? runSpeed : walkSpeed;
 
-            playerRigidBody.velocity = movementDirection * speed;
+            playerRigidBody.velocity = new Vector3(movementDirection.x * speed, playerRigidBody.velocity.y, movementDirection.z * speed);
+            playerRigidBody.AddForce(Vector3.down * gravity, ForceMode.Acceleration);
 
             transform.rotation = Quaternion.Slerp(
                 transform.rotation,
@@ -112,7 +114,8 @@ public class PlayerController : MonoBehaviour
         }
         else
         {
-            playerRigidBody.velocity = Vector3.zero;
+            playerRigidBody.velocity = new Vector3(0, playerRigidBody.velocity.y, 0);
+            playerRigidBody.AddForce(Vector3.down * gravity, ForceMode.Acceleration);
         }
     }
 
