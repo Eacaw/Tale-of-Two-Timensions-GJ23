@@ -9,11 +9,10 @@ public class NPCController : MonoBehaviour
 
     public string npcName = "NPC";
 
-    public GameObject npcChatUI;
+    public DialogManager dialogueManager;
 
     private void Start()
     {
-        npcChatUI.SetActive(false);
         player = GameObject.FindGameObjectWithTag("Player").transform;
         npcIndicatorLight.intensity = 0;
         DisplayNPCName();
@@ -63,7 +62,7 @@ public class NPCController : MonoBehaviour
 
     public void OnMouseDown()
     {
-        npcChatUI.SetActive(true);
+        this.gameObject.GetComponents<DialogueTrigger>()[0].TriggerDialogue();
     }
 
     public void OnMouseEnter()
