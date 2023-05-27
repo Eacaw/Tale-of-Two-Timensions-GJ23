@@ -23,9 +23,6 @@ public class DialogManager : MonoBehaviour
         ChatBubbleController.SetActive(true);
         nameText.text = dialogue.name;
 
-
-        sentences.Clear();
-
         foreach (string sentence in dialogue.sentences)
         {
             sentences.Enqueue(sentence);
