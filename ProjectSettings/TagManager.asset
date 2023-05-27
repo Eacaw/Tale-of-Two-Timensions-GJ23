@@ -10,6 +10,7 @@ TagManager:
   - Key
   - Amulet
   - Wizard
+  - Blacksmith
   layers:
   - Default
   - TransparentFX
