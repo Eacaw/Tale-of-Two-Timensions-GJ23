@@ -11,6 +11,7 @@ TagManager:
   - Amulet
   - Wizard
   - Blacksmith
+  - Poison
   layers:
   - Default
   - TransparentFX
