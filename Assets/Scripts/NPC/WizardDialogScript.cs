@@ -3,11 +3,11 @@ using UnityEngine;
 public class WizardDialogScript : MonoBehaviour
 {
     public Light npcIndicatorLight;
-     private DialogueTrigger[] dialogItems;
+    private DialogueTrigger[] dialogItems;
 
     public void Start()
     {
-         dialogItems = this.gameObject.GetComponents<DialogueTrigger>();
+        dialogItems = this.gameObject.GetComponents<DialogueTrigger>();
 
         npcIndicatorLight.intensity = 0;
 
@@ -27,27 +27,39 @@ public class WizardDialogScript : MonoBehaviour
 
     public void OnMouseDown()
     {
-        int currentCheckpoint = GameObject.FindGameObjectsWithTag("Player")[0]
-            .GetComponent<PlayerController>()
-            .currentCheckpoint;
-        if (currentCheckpoint  == 0)
+        PlayerController playerController = GameObject.FindGameObjectsWithTag("Player")[
+            0
+        ].GetComponent<PlayerController>();
+        int currentCheckpoint = playerController.currentCheckpoint;
+
+        // When in doubt, if/else it out
+        // dont judge me
+        if (currentCheckpoint == 0)
         {
             dialogItems[0].TriggerDialogue();
+            playerController.currentCheckpoint = 1;
         }
         else if (currentCheckpoint == 1)
         {
             dialogItems[1].TriggerDialogue();
         }
-        else if (currentCheckpoint == 2)
+        else if (currentCheckpoint == 2 || currentCheckpoint == 3)
         {
             dialogItems[2].TriggerDialogue();
+            playerController.currentCheckpoint = 3;
         }
-        else if (currentCheckpoint == 4)
+        else if (currentCheckpoint == 4 || currentCheckpoint == 5)
         {
+            playerController.currentCheckpoint = 5;
             dialogItems[3].TriggerDialogue();
         }
-        else if (currentCheckpoint == 6)
+        else if (currentCheckpoint == 6 || currentCheckpoint == 7 || currentCheckpoint == 8)
         {
+            if(currentCheckpoint == 6)
+            {
+                playerController.currentCheckpoint = 7;
+            }
+
             dialogItems[4].TriggerDialogue();
         }
         else if (currentCheckpoint == 9)
