@@ -12,6 +12,7 @@ TagManager:
   - Wizard
   - Blacksmith
   - Poison
+  - WizardJuice
   layers:
   - Default
   - TransparentFX
