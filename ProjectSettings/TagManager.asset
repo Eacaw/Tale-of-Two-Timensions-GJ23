@@ -9,6 +9,7 @@ TagManager:
   - InstructionalUI
   - Key
   - Amulet
+  - Wizard
   layers:
   - Default
   - TransparentFX
