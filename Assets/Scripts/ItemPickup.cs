@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class ItemPickup : MonoBehaviour
@@ -18,10 +16,7 @@ public class ItemPickup : MonoBehaviour
 
         player = GameObject.FindGameObjectWithTag("Player");
         playerController = player.GetComponent<PlayerController>();
-
-
     }
-
 
     public void OnMouseDown()
     {
@@ -51,6 +46,17 @@ public class ItemPickup : MonoBehaviour
         if (gameObject.CompareTag("Amulet"))
         {
             playerController.hasAmulet = true;
+            playerController.currentCheckpoint = 2;
+        }
+
+         if (gameObject.CompareTag("Poison"))
+        {
+            playerController.currentCheckpoint = 4;
+        }
+
+         if (gameObject.CompareTag("WizardJuice"))
+        {
+            playerController.currentCheckpoint = 10;
         }
 
         player.GetComponent<Animator>().SetTrigger("pickupItem");

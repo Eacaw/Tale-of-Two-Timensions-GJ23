@@ -9,6 +9,11 @@ TagManager:
   - InstructionalUI
   - Key
   - Amulet
+  - Wizard
+  - Blacksmith
+  - Poison
+  - WizardJuice
+  - CookAmulet
   layers:
   - Default
   - TransparentFX
