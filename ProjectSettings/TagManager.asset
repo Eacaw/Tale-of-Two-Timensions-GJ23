@@ -13,6 +13,7 @@ TagManager:
   - Blacksmith
   - Poison
   - WizardJuice
+  - CookAmulet
   layers:
   - Default
   - TransparentFX
