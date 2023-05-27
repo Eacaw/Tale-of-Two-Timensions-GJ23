@@ -6,7 +6,7 @@ using TMPro;
 
 public class DialogManager : MonoBehaviour
 {
-    public GameObject dialogueUi;
+    public GameObject ChatBubbleController;
     public TMP_Text nameText;
     public TMP_Text dialogueText;
 
@@ -14,13 +14,13 @@ public class DialogManager : MonoBehaviour
 
     void Start()
     {
-        dialogueUi.SetActive(false);
+        ChatBubbleController.SetActive(false);
         sentences = new Queue<string>();
     }
 
     public void StartDialogue(Dialogue dialogue)
     {
-        dialogueUi.SetActive(true);
+        ChatBubbleController.SetActive(true);
         nameText.text = dialogue.name;
 
 
@@ -48,6 +48,6 @@ public class DialogManager : MonoBehaviour
 
     void EndDialogue()
     {
-        dialogueUi.SetActive(false);
+        ChatBubbleController.SetActive(false);
     }
 }
