@@ -3,10 +3,40 @@ using UnityEngine;
 public class WizardDialogScript : MonoBehaviour
 {
     public Light npcIndicatorLight;
+    public int currentDialogIndex = 0;
+
+    public void Start()
+    {
+        npcIndicatorLight.intensity = 0;
+    }
 
     public void OnMouseDown()
     {
-        this.gameObject.GetComponents<DialogueTrigger>()[0].TriggerDialogue();
+        DialogueTrigger[] dialogItems = this.gameObject.GetComponents<DialogueTrigger>();
+
+        Debug.Log("currentDialogIndex: " + currentDialogIndex);
+        Debug.Log("dialogItems.Length: " + dialogItems.Length);
+
+        // sort the dialogItems based on their DialogId
+        for (int i = 0; i < dialogItems.Length; i++)
+        {
+            for (int j = i + 1; j < dialogItems.Length; j++)
+            {
+                if (dialogItems[i].DialogID > dialogItems[j].DialogID)
+                {
+                    DialogueTrigger temp = dialogItems[i];
+                    dialogItems[i] = dialogItems[j];
+                    dialogItems[j] = temp;
+                }
+            }
+        }
+
+        dialogItems[currentDialogIndex].TriggerDialogue();
+
+        if (currentDialogIndex == 0)
+        {
+            currentDialogIndex = 1;
+        }
     }
 
     public void OnMouseEnter()
