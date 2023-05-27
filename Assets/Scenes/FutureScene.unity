@@ -196,8 +196,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.013460079, y: 0.093766764, z: 0.027687263}
-  m_Center: {x: 1.1726223e-10, y: 0.0042919065, z: 0.01302684}
+  m_Size: {x: 0.013460079, y: 0.093766764, z: 0.05629524}
+  m_Center: {x: -1.1738416e-10, y: 0.0042919065, z: 0.02733084}
 --- !u!4 &2703014 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8664285174996122272, guid: 771c4da42f9b8dd4795b9b052de48c00, type: 3}
@@ -8524,7 +8524,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e552dd21551009c45a3858ad2b25b10f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogueUi: {fileID: 933386794}
+  ChatBubbleController: {fileID: 933386794}
   nameText: {fileID: 612755072}
   dialogueText: {fileID: 252242293}
 --- !u!4 &290793455
@@ -11408,8 +11408,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.4776707, y: 4.3329377, z: 8.596691}
-  m_Center: {x: 1.331747, y: 1.6664698, z: 0.06685829}
+  m_Size: {x: 1.4776707, y: 6.793987, z: 8.596691}
+  m_Center: {x: 1.331747, y: 2.8969939, z: 0.0668583}
 --- !u!4 &391769657 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3491638849468908974, guid: 0cfe41987a75b8941a1ed4788c53d68c, type: 3}
@@ -16475,6 +16475,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: PicketFence 4M (9)
       objectReference: {fileID: 0}
+    - target: {fileID: 6806121358232162883, guid: 4d7c753abb769c8478984f88fa597131, type: 3}
+      propertyPath: m_Size.y
+      value: 6.0351467
+      objectReference: {fileID: 0}
+    - target: {fileID: 6806121358232162883, guid: 4d7c753abb769c8478984f88fa597131, type: 3}
+      propertyPath: m_Center.x
+      value: -0.04534982
+      objectReference: {fileID: 0}
+    - target: {fileID: 6806121358232162883, guid: 4d7c753abb769c8478984f88fa597131, type: 3}
+      propertyPath: m_Center.y
+      value: 2.9845433
+      objectReference: {fileID: 0}
+    - target: {fileID: 6806121358232162883, guid: 4d7c753abb769c8478984f88fa597131, type: 3}
+      propertyPath: m_Center.z
+      value: -3.698696
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4d7c753abb769c8478984f88fa597131, type: 3}
 --- !u!1001 &590420169
@@ -19031,7 +19047,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3029354026890065688, guid: bc05f5b4a6e881c48a4e264eb2e397ce, type: 3}
       propertyPath: m_Name
-      value: ChatBubble
+      value: ChatBubbleController
       objectReference: {fileID: 0}
     - target: {fileID: 3029354026890065688, guid: bc05f5b4a6e881c48a4e264eb2e397ce, type: 3}
       propertyPath: m_IsActive
@@ -23293,20 +23309,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 6747da33e7ca87f479e39c00760d6802, type: 3}
   m_PrefabInstance: {fileID: 609652412}
   m_PrefabAsset: {fileID: 0}
---- !u!64 &805382707
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 609652413}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -5003366202268185646, guid: 6747da33e7ca87f479e39c00760d6802, type: 3}
 --- !u!114 &805382710
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -23321,6 +23323,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hoverIndicatorLight: {fileID: 1430947336}
   canvasRenderer: {fileID: 120440557}
+--- !u!65 &805382711
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 609652413}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.020709807, y: 0.013319006, z: 0.02540134}
+  m_Center: {x: 0.00069243676, y: -0.0002729278, z: -0.0010807879}
 --- !u!4 &807683726 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2883638402381188700, guid: 1a82b6f74263b6744af415fa8296446d, type: 3}
@@ -24353,6 +24368,22 @@ PrefabInstance:
     - target: {fileID: 1062010576307604241, guid: 4d7c753abb769c8478984f88fa597131, type: 3}
       propertyPath: m_Name
       value: PicketFence 4M (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6806121358232162883, guid: 4d7c753abb769c8478984f88fa597131, type: 3}
+      propertyPath: m_Size.y
+      value: 6.786416
+      objectReference: {fileID: 0}
+    - target: {fileID: 6806121358232162883, guid: 4d7c753abb769c8478984f88fa597131, type: 3}
+      propertyPath: m_Center.x
+      value: -0.04535411
+      objectReference: {fileID: 0}
+    - target: {fileID: 6806121358232162883, guid: 4d7c753abb769c8478984f88fa597131, type: 3}
+      propertyPath: m_Center.y
+      value: 3.3601904
+      objectReference: {fileID: 0}
+    - target: {fileID: 6806121358232162883, guid: 4d7c753abb769c8478984f88fa597131, type: 3}
+      propertyPath: m_Center.z
+      value: -3.6987243
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4d7c753abb769c8478984f88fa597131, type: 3}
@@ -25951,6 +25982,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: PicketFence 4M (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 6806121358232162883, guid: 4d7c753abb769c8478984f88fa597131, type: 3}
+      propertyPath: m_Size.y
+      value: 6.021182
+      objectReference: {fileID: 0}
+    - target: {fileID: 6806121358232162883, guid: 4d7c753abb769c8478984f88fa597131, type: 3}
+      propertyPath: m_Center.y
+      value: 2.9775734
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4d7c753abb769c8478984f88fa597131, type: 3}
 --- !u!4 &879876592 stripped
@@ -27321,6 +27360,22 @@ PrefabInstance:
     - target: {fileID: 1062010576307604241, guid: 4d7c753abb769c8478984f88fa597131, type: 3}
       propertyPath: m_Name
       value: PicketFence 4M (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6806121358232162883, guid: 4d7c753abb769c8478984f88fa597131, type: 3}
+      propertyPath: m_Size.y
+      value: 6.7650027
+      objectReference: {fileID: 0}
+    - target: {fileID: 6806121358232162883, guid: 4d7c753abb769c8478984f88fa597131, type: 3}
+      propertyPath: m_Center.x
+      value: -0.045355044
+      objectReference: {fileID: 0}
+    - target: {fileID: 6806121358232162883, guid: 4d7c753abb769c8478984f88fa597131, type: 3}
+      propertyPath: m_Center.y
+      value: 3.349456
+      objectReference: {fileID: 0}
+    - target: {fileID: 6806121358232162883, guid: 4d7c753abb769c8478984f88fa597131, type: 3}
+      propertyPath: m_Center.z
+      value: -3.6987243
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4d7c753abb769c8478984f88fa597131, type: 3}
@@ -30789,6 +30844,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: PicketFence 4M (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 6806121358232162883, guid: 4d7c753abb769c8478984f88fa597131, type: 3}
+      propertyPath: m_Size.y
+      value: 6.7868667
+      objectReference: {fileID: 0}
+    - target: {fileID: 6806121358232162883, guid: 4d7c753abb769c8478984f88fa597131, type: 3}
+      propertyPath: m_Center.x
+      value: -0.045337312
+      objectReference: {fileID: 0}
+    - target: {fileID: 6806121358232162883, guid: 4d7c753abb769c8478984f88fa597131, type: 3}
+      propertyPath: m_Center.y
+      value: 3.3604157
+      objectReference: {fileID: 0}
+    - target: {fileID: 6806121358232162883, guid: 4d7c753abb769c8478984f88fa597131, type: 3}
+      propertyPath: m_Center.z
+      value: -3.698752
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4d7c753abb769c8478984f88fa597131, type: 3}
 --- !u!4 &1065576839 stripped
@@ -32875,6 +32946,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: PicketFence 4M (12)
       objectReference: {fileID: 0}
+    - target: {fileID: 6806121358232162883, guid: 4d7c753abb769c8478984f88fa597131, type: 3}
+      propertyPath: m_Size.y
+      value: 6.4721313
+      objectReference: {fileID: 0}
+    - target: {fileID: 6806121358232162883, guid: 4d7c753abb769c8478984f88fa597131, type: 3}
+      propertyPath: m_Center.x
+      value: -0.045349453
+      objectReference: {fileID: 0}
+    - target: {fileID: 6806121358232162883, guid: 4d7c753abb769c8478984f88fa597131, type: 3}
+      propertyPath: m_Center.y
+      value: 3.203048
+      objectReference: {fileID: 0}
+    - target: {fileID: 6806121358232162883, guid: 4d7c753abb769c8478984f88fa597131, type: 3}
+      propertyPath: m_Center.z
+      value: -3.6987042
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4d7c753abb769c8478984f88fa597131, type: 3}
 --- !u!4 &1131214042 stripped
@@ -34684,7 +34771,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3670549389858788536, guid: 537141691d98e5b4f920d362a785c520, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 13.42
+      value: 13.214
       objectReference: {fileID: 0}
     - target: {fileID: 3670549389858788536, guid: 537141691d98e5b4f920d362a785c520, type: 3}
       propertyPath: m_LocalPosition.z
@@ -36876,8 +36963,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.0071005323, y: 0.09545105, z: 0.022890337}
-  m_Center: {x: 0.006981176, y: -0.0040285164, z: 0.004455106}
+  m_Size: {x: 0.0071005323, y: 0.09545105, z: 0.03542354}
+  m_Center: {x: 0.006981176, y: -0.0040285164, z: 0.010721612}
 --- !u!4 &1258842184 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3222764081394884265, guid: 5cb27bb5a5b86d240bd65537ef27d280, type: 3}
@@ -48137,6 +48224,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: PicketFence 4M (11)
       objectReference: {fileID: 0}
+    - target: {fileID: 6806121358232162883, guid: 4d7c753abb769c8478984f88fa597131, type: 3}
+      propertyPath: m_Size.y
+      value: 8.597163
+      objectReference: {fileID: 0}
+    - target: {fileID: 6806121358232162883, guid: 4d7c753abb769c8478984f88fa597131, type: 3}
+      propertyPath: m_Center.x
+      value: -0.04535827
+      objectReference: {fileID: 0}
+    - target: {fileID: 6806121358232162883, guid: 4d7c753abb769c8478984f88fa597131, type: 3}
+      propertyPath: m_Center.y
+      value: 4.2655635
+      objectReference: {fileID: 0}
+    - target: {fileID: 6806121358232162883, guid: 4d7c753abb769c8478984f88fa597131, type: 3}
+      propertyPath: m_Center.z
+      value: -3.6987247
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4d7c753abb769c8478984f88fa597131, type: 3}
 --- !u!4 &1636349064 stripped
@@ -50284,6 +50387,26 @@ PrefabInstance:
     - target: {fileID: 1062010576307604241, guid: 4d7c753abb769c8478984f88fa597131, type: 3}
       propertyPath: m_Name
       value: PicketFence 4M (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6806121358232162883, guid: 4d7c753abb769c8478984f88fa597131, type: 3}
+      propertyPath: m_Size.y
+      value: 5.895195
+      objectReference: {fileID: 0}
+    - target: {fileID: 6806121358232162883, guid: 4d7c753abb769c8478984f88fa597131, type: 3}
+      propertyPath: m_Size.z
+      value: 11.967909
+      objectReference: {fileID: 0}
+    - target: {fileID: 6806121358232162883, guid: 4d7c753abb769c8478984f88fa597131, type: 3}
+      propertyPath: m_Center.x
+      value: -0.04532457
+      objectReference: {fileID: 0}
+    - target: {fileID: 6806121358232162883, guid: 4d7c753abb769c8478984f88fa597131, type: 3}
+      propertyPath: m_Center.y
+      value: 2.9145799
+      objectReference: {fileID: 0}
+    - target: {fileID: 6806121358232162883, guid: 4d7c753abb769c8478984f88fa597131, type: 3}
+      propertyPath: m_Center.z
+      value: -1.9135373
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4d7c753abb769c8478984f88fa597131, type: 3}
@@ -54223,6 +54346,22 @@ PrefabInstance:
     - target: {fileID: 1062010576307604241, guid: 4d7c753abb769c8478984f88fa597131, type: 3}
       propertyPath: m_Name
       value: PicketFence 4M (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6806121358232162883, guid: 4d7c753abb769c8478984f88fa597131, type: 3}
+      propertyPath: m_Size.y
+      value: 6.791603
+      objectReference: {fileID: 0}
+    - target: {fileID: 6806121358232162883, guid: 4d7c753abb769c8478984f88fa597131, type: 3}
+      propertyPath: m_Center.x
+      value: -0.045355327
+      objectReference: {fileID: 0}
+    - target: {fileID: 6806121358232162883, guid: 4d7c753abb769c8478984f88fa597131, type: 3}
+      propertyPath: m_Center.y
+      value: 3.362784
+      objectReference: {fileID: 0}
+    - target: {fileID: 6806121358232162883, guid: 4d7c753abb769c8478984f88fa597131, type: 3}
+      propertyPath: m_Center.z
+      value: -3.6987245
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4d7c753abb769c8478984f88fa597131, type: 3}
@@ -58802,8 +58941,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.2247437, y: 2.9171948, z: 11.121321}
-  m_Center: {x: 3.0921466, y: 0.9585974, z: -0.9594569}
+  m_Size: {x: 1.2247435, y: 7.796239, z: 11.121321}
+  m_Center: {x: 3.0921469, y: 3.3981194, z: -0.95945704}
 --- !u!4 &1911274045 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8023234813240373398, guid: 5c5d2b065f8b190418d46fcde65c1a8d, type: 3}
@@ -59280,6 +59419,18 @@ PrefabInstance:
     - target: {fileID: 1062010576307604241, guid: 4d7c753abb769c8478984f88fa597131, type: 3}
       propertyPath: m_Name
       value: PicketFence 4M (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6806121358232162883, guid: 4d7c753abb769c8478984f88fa597131, type: 3}
+      propertyPath: m_Size.y
+      value: 6.773939
+      objectReference: {fileID: 0}
+    - target: {fileID: 6806121358232162883, guid: 4d7c753abb769c8478984f88fa597131, type: 3}
+      propertyPath: m_Center.x
+      value: -0.045355275
+      objectReference: {fileID: 0}
+    - target: {fileID: 6806121358232162883, guid: 4d7c753abb769c8478984f88fa597131, type: 3}
+      propertyPath: m_Center.y
+      value: 3.3539257
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4d7c753abb769c8478984f88fa597131, type: 3}
@@ -63507,6 +63658,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: PicketFence 4M (10)
       objectReference: {fileID: 0}
+    - target: {fileID: 6806121358232162883, guid: 4d7c753abb769c8478984f88fa597131, type: 3}
+      propertyPath: m_Size.y
+      value: 6.4031367
+      objectReference: {fileID: 0}
+    - target: {fileID: 6806121358232162883, guid: 4d7c753abb769c8478984f88fa597131, type: 3}
+      propertyPath: m_Center.x
+      value: -0.045358364
+      objectReference: {fileID: 0}
+    - target: {fileID: 6806121358232162883, guid: 4d7c753abb769c8478984f88fa597131, type: 3}
+      propertyPath: m_Center.y
+      value: 3.1685736
+      objectReference: {fileID: 0}
+    - target: {fileID: 6806121358232162883, guid: 4d7c753abb769c8478984f88fa597131, type: 3}
+      propertyPath: m_Center.z
+      value: -3.6987593
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4d7c753abb769c8478984f88fa597131, type: 3}
 --- !u!4 &2057556857 stripped
@@ -63630,6 +63797,22 @@ PrefabInstance:
     - target: {fileID: 1062010576307604241, guid: 4d7c753abb769c8478984f88fa597131, type: 3}
       propertyPath: m_Name
       value: PicketFence 4M (8)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6806121358232162883, guid: 4d7c753abb769c8478984f88fa597131, type: 3}
+      propertyPath: m_Size.y
+      value: 5.564542
+      objectReference: {fileID: 0}
+    - target: {fileID: 6806121358232162883, guid: 4d7c753abb769c8478984f88fa597131, type: 3}
+      propertyPath: m_Center.x
+      value: -0.045355193
+      objectReference: {fileID: 0}
+    - target: {fileID: 6806121358232162883, guid: 4d7c753abb769c8478984f88fa597131, type: 3}
+      propertyPath: m_Center.y
+      value: 2.7492437
+      objectReference: {fileID: 0}
+    - target: {fileID: 6806121358232162883, guid: 4d7c753abb769c8478984f88fa597131, type: 3}
+      propertyPath: m_Center.z
+      value: -3.6987247
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4d7c753abb769c8478984f88fa597131, type: 3}
@@ -66371,7 +66554,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4678504677469640910, guid: b7b5a7ad671d3204d959542c9a891b7a, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -4.77
+      value: 79.16
       objectReference: {fileID: 0}
     - target: {fileID: 4678504677469640910, guid: b7b5a7ad671d3204d959542c9a891b7a, type: 3}
       propertyPath: m_LocalRotation.w
