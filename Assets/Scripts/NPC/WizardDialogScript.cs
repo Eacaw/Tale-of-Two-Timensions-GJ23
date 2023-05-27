@@ -5,11 +5,14 @@ public class WizardDialogScript : MonoBehaviour
     public Light npcIndicatorLight;
     private DialogueTrigger[] dialogItems;
 
+    public GameObject AmuletCook;
+
     public void Start()
     {
         dialogItems = this.gameObject.GetComponents<DialogueTrigger>();
 
         npcIndicatorLight.intensity = 0;
+        AmuletCook.SetActive(false);
 
         for (int i = 0; i < dialogItems.Length; i++)
         {
@@ -55,7 +58,7 @@ public class WizardDialogScript : MonoBehaviour
         }
         else if (currentCheckpoint == 6 || currentCheckpoint == 7 || currentCheckpoint == 8)
         {
-            if(currentCheckpoint == 6)
+            if (currentCheckpoint == 6)
             {
                 playerController.currentCheckpoint = 7;
             }
@@ -69,7 +72,7 @@ public class WizardDialogScript : MonoBehaviour
         else if (currentCheckpoint == 10)
         {
             dialogItems[6].TriggerDialogue();
-            playerController.currentCheckpoint = 11;
+            AmuletCook.SetActive(true);
         }
         else if (currentCheckpoint == 11)
         {
