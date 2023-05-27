@@ -3,18 +3,14 @@ using UnityEngine;
 public class WizardDialogScript : MonoBehaviour
 {
     public Light npcIndicatorLight;
-    public int currentDialogIndex = 0;
+     private DialogueTrigger[] dialogItems;
 
     public void Start()
     {
+         dialogItems = this.gameObject.GetComponents<DialogueTrigger>();
+
         npcIndicatorLight.intensity = 0;
-    }
 
-    public void OnMouseDown()
-    {
-        DialogueTrigger[] dialogItems = this.gameObject.GetComponents<DialogueTrigger>();
-
-        // sort the dialogItems based on their DialogId
         for (int i = 0; i < dialogItems.Length; i++)
         {
             for (int j = i + 1; j < dialogItems.Length; j++)
@@ -27,12 +23,44 @@ public class WizardDialogScript : MonoBehaviour
                 }
             }
         }
+    }
 
-        dialogItems[currentDialogIndex].TriggerDialogue();
-
-        if (currentDialogIndex == 0)
+    public void OnMouseDown()
+    {
+        int currentCheckpoint = GameObject.FindGameObjectsWithTag("Player")[0]
+            .GetComponent<PlayerController>()
+            .currentCheckpoint;
+        if (currentCheckpoint  == 0)
         {
-            currentDialogIndex = 1;
+            dialogItems[0].TriggerDialogue();
+        }
+        else if (currentCheckpoint == 1)
+        {
+            dialogItems[1].TriggerDialogue();
+        }
+        else if (currentCheckpoint == 2)
+        {
+            dialogItems[2].TriggerDialogue();
+        }
+        else if (currentCheckpoint == 4)
+        {
+            dialogItems[3].TriggerDialogue();
+        }
+        else if (currentCheckpoint == 6)
+        {
+            dialogItems[4].TriggerDialogue();
+        }
+        else if (currentCheckpoint == 9)
+        {
+            dialogItems[5].TriggerDialogue();
+        }
+        else if (currentCheckpoint == 10)
+        {
+            dialogItems[6].TriggerDialogue();
+        }
+        else if (currentCheckpoint == 11)
+        {
+            dialogItems[7].TriggerDialogue();
         }
     }
 

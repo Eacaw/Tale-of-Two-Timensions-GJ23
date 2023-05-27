@@ -69541,6 +69541,11 @@ GameObject:
   - component: {fileID: 190784088}
   - component: {fileID: 919132149297958707}
   - component: {fileID: 190784090}
+  - component: {fileID: 919132149297958713}
+  - component: {fileID: 919132149297958712}
+  - component: {fileID: 919132149297958711}
+  - component: {fileID: 919132149297958710}
+  - component: {fileID: 919132149297958709}
   m_Layer: 0
   m_Name: Wizard
   m_TagString: Wizard
@@ -69566,6 +69571,96 @@ MonoBehaviour:
     - Have you found the amulet yet?! No?! I'm not going back to that horse, it terrifies
       me!
   DialogID: 1
+--- !u!114 &919132149297958709
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 919132149297958706}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ea2bd0df68029e4cb6425471168eaf7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue:
+    name: 
+    sentences:
+    - "You did it! The amulet is all juiced up! Let\u2019s go back to 2023! But first
+      \u2026 I hereby promote you to Master Wizard!!"
+  DialogID: 7
+--- !u!114 &919132149297958710
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 919132149297958706}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ea2bd0df68029e4cb6425471168eaf7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue:
+    name: 
+    sentences:
+    - "Huzzah! That\u2019s wizard juice! Well done, apprentice! Boil it in the pot!"
+  DialogID: 6
+--- !u!114 &919132149297958711
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 919132149297958706}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ea2bd0df68029e4cb6425471168eaf7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue:
+    name: 
+    sentences:
+    - "Nincompoop! That\u2019s not wizard juice! It\u2019s a key! The Blacksmith\u2019s
+      key! It will open the door to \u2026. you can guess, right?"
+  DialogID: 5
+--- !u!114 &919132149297958712
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 919132149297958706}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ea2bd0df68029e4cb6425471168eaf7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue:
+    name: 
+    sentences:
+    - "Fool of a wizard! That\u2019s not wizard juice! It\u2019s poison rum! "
+    - "Go to the prison! Dispose it down the throat of some no good wrongdoer who\u2019ll
+      take it!"
+  DialogID: 4
+--- !u!114 &919132149297958713
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 919132149297958706}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ea2bd0df68029e4cb6425471168eaf7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue:
+    name: 
+    sentences:
+    - "Blimey, that\u2019s not wizard juice! It\u2019s poison! Try Grindelda\u2019s
+      Fluid Shop, see if she has any!"
+  DialogID: 3
 --- !u!4 &994702463204857228
 Transform:
   m_ObjectHideFlags: 0
