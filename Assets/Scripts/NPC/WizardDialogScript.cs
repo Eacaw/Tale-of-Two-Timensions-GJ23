@@ -69,10 +69,12 @@ public class WizardDialogScript : MonoBehaviour
         else if (currentCheckpoint == 10)
         {
             dialogItems[6].TriggerDialogue();
+            playerController.currentCheckpoint = 11;
         }
         else if (currentCheckpoint == 11)
         {
             dialogItems[7].TriggerDialogue();
+            playerController.currentCheckpoint = 12;
         }
     }
 

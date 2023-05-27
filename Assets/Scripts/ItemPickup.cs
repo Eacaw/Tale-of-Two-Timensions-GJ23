@@ -58,7 +58,7 @@ public class ItemPickup : MonoBehaviour
 
          if (gameObject.CompareTag("WizardJuice"))
         {
-            playerController.currentCheckpoint = 11;
+            playerController.currentCheckpoint = 10;
         }
 
         player.GetComponent<Animator>().SetTrigger("pickupItem");
