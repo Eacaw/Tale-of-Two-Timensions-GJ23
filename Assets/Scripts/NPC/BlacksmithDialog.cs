@@ -13,7 +13,6 @@ public class BlacksmithDialog : MonoBehaviour
 
         npcIndicatorLight.intensity = 0;
 
-        // sort the dialogItems based on their DialogId
         for (int i = 0; i < dialogItems.Length; i++)
         {
             for (int j = i + 1; j < dialogItems.Length; j++)
@@ -30,7 +29,6 @@ public class BlacksmithDialog : MonoBehaviour
 
     void OnMouseDown()
     {
-        // check if the player has reached checkpoint 6, display dialog 0 if before, 1 after
         if (
             GameObject.FindGameObjectsWithTag("Player")[0]
                 .GetComponent<PlayerController>()
