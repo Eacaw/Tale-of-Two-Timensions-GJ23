@@ -48,13 +48,12 @@ public class ItemPickup : MonoBehaviour
         if (gameObject.CompareTag("Amulet"))
         {
             playerController.hasAmulet = true;
-            // findthe WizardDialogScript and set the dialog index to 1
-            GameObject wizard = GameObject.FindGameObjectWithTag("Wizard");
-            WizardDialogScript wizardDialogScript = wizard.GetComponent<WizardDialogScript>();
-            wizardDialogScript.currentDialogIndex = 2;
-            Debug.Log(
-                "WizardDialogScript.currentDialogIndex: " + wizardDialogScript.currentDialogIndex
-            );
+            playerController.currentCheckpoint = 2;
+        }
+
+         if (gameObject.CompareTag("Poison"))
+        {
+            playerController.currentCheckpoint = 4;
         }
 
         player.GetComponent<Animator>().SetTrigger("pickupItem");
