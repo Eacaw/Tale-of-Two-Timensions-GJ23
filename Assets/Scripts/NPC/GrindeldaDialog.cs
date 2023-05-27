@@ -40,6 +40,8 @@ public class GrindeldaDialog : MonoBehaviour
         else if (currentCheckpoint == 5)
         {
             dialogItems[1].TriggerDialogue();
+            this.gameObject.GetComponent<GrindeldaPoisonRumScript>().addPoisonToRum();
+            
         }
         else
         {
