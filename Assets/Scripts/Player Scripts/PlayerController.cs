@@ -31,6 +31,11 @@ public class PlayerController : MonoBehaviour
     Collider playerCollider;
     Rigidbody playerRigidBody;
 
+    // ------------------------------------------
+    // Player checkpoint tracking
+    // ------------------------------------------
+    public int currentCheckpoint = 0;
+
     void Start()
     {
         DontDestroyOnLoad(this.gameObject);
