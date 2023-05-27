@@ -15468,22 +15468,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 743fe71a8295c9547bd0078397331134, type: 3}
   m_PrefabInstance: {fileID: 523607400}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &523607403
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 523607402}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 90e83a12374fd4c4b9f4823fedaf6133, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  detectionRadius: 5
-  npcIndicatorLight: {fileID: 1325151781}
-  npcName: Grindelda
-  dialogueManager: {fileID: 290793454}
 --- !u!95 &523607404
 Animator:
   serializedVersion: 5
@@ -15550,9 +15534,9 @@ MonoBehaviour:
   dialogue:
     name: Grindelda
     sentences:
-    - "\nIt\u2019s your lucky day, boy! Free rum for all! What\u2019s that green
-      fluid you got? Poison? Well here, have some rum in there! Now it\u2019ll really
-      pack a punch!"
+    - "It\u2019s your lucky day, boy! Free rum for all! What\u2019s that green fluid
+      you got? Poison? Well here, have some rum in there! Now it\u2019ll really pack
+      a punch!"
   DialogID: 1
 --- !u!114 &523607408
 MonoBehaviour:
@@ -15572,6 +15556,19 @@ MonoBehaviour:
     - "It\u2019s your lucky day, boy! Free rum for all! I\u2019m all out of jars
       though! No jar, no rum!"
   DialogID: 0
+--- !u!114 &523607409
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 523607402}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46e5c6f3f87604641a33c8bfa5056aa4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  npcIndicatorLight: {fileID: 1325151781}
 --- !u!4 &524876922 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 160267409654776748, guid: 66f68980538353945a215e386879dcae, type: 3}
@@ -51380,6 +51377,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 184440798}
     m_Modifications:
+    - target: {fileID: 5155126868746846412, guid: dd8917f77c670d949a5ca2c7a77807c6, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 7bd90bef79ee6c640934bf5f0d20fbee, type: 2}
     - target: {fileID: 6323507212163857315, guid: dd8917f77c670d949a5ca2c7a77807c6, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -53042,6 +53043,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1685060055}
   - component: {fileID: 1685060056}
+  - component: {fileID: 1685060057}
   m_Layer: 0
   m_Name: Spot Light
   m_TagString: Untagged
@@ -53075,8 +53077,8 @@ Light:
   serializedVersion: 10
   m_Type: 0
   m_Shape: 0
-  m_Color: {r: 1, g: 0.63798314, b: 0.033018887, a: 1}
-  m_Intensity: 6
+  m_Color: {r: 0.068735555, g: 1, b: 0.031372547, a: 1}
+  m_Intensity: 8.98
   m_Range: 10
   m_SpotAngle: 48
   m_InnerSpotAngle: 21.80208
@@ -53126,6 +53128,21 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &1685060057
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1685060054}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 401f07eb8f5d94d40add58d41d5a78a8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  minIntensity: 5
+  maxIntensity: 10
+  flickerSpeed: 2
 --- !u!4 &1686784012 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6728525469616471302, guid: 619eb9c17df961d49bb8a363d8f4ddf7, type: 3}
