@@ -10,7 +10,7 @@ public class GrindeldaDialog : MonoBehaviour
     void Start()
     {
         dialogItems = this.gameObject.GetComponents<DialogueTrigger>();
-
+ DisplayNPCName();
         npcIndicatorLight.intensity = 0;
 
         // sort the dialogItems based on their DialogId
@@ -41,7 +41,7 @@ public class GrindeldaDialog : MonoBehaviour
         {
             dialogItems[1].TriggerDialogue();
             this.gameObject.GetComponent<GrindeldaPoisonRumScript>().addPoisonToRum();
-            
+
         }
         else
         {
@@ -57,5 +57,21 @@ public class GrindeldaDialog : MonoBehaviour
     void OnMouseExit()
     {
         npcIndicatorLight.intensity = 0;
+    }
+
+     private void DisplayNPCName()
+    {
+        GameObject nameText = new GameObject("NPC Name");
+        nameText.transform.SetParent(transform);
+        nameText.transform.position = transform.position + new Vector3(0, 4f, 0);
+        TextMesh textMesh = nameText.AddComponent<TextMesh>();
+        textMesh.text = "Grindelda";
+        textMesh.fontSize = 50;
+        textMesh.anchor = TextAnchor.MiddleCenter;
+        textMesh.alignment = TextAlignment.Center;
+        nameText.transform.rotation =
+            Quaternion.LookRotation(transform.forward) * Quaternion.Euler(0, 180, 0);
+        nameText.transform.localScale = new Vector3(0.1f, 0.1f, 0.1f);
+        textMesh.color = Color.grey;
     }
 }
