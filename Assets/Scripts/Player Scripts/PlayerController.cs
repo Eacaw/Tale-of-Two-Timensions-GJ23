@@ -6,8 +6,6 @@ using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
-    // Have set default walk and run speed so it looks about right with the animations
-    public float jumpHeight = 15.0f;
     public float cameraHeight = 15.0f;
     public float cameraDistance = 7.5f;
     public bool invertCameraXAxis = false;
@@ -19,6 +17,7 @@ public class PlayerController : MonoBehaviour
     private float moveSpeed;
     private float walkSpeed = 10.0f;
     private float runSpeed = 16.0f;
+    private float jumpHeight = 15.0f;
     private bool inputDisabled = false;
     private float gravity = 5f;
 
