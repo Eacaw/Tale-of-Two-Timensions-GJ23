@@ -14,9 +14,6 @@ public class WizardDialogScript : MonoBehaviour
     {
         DialogueTrigger[] dialogItems = this.gameObject.GetComponents<DialogueTrigger>();
 
-        Debug.Log("currentDialogIndex: " + currentDialogIndex);
-        Debug.Log("dialogItems.Length: " + dialogItems.Length);
-
         // sort the dialogItems based on their DialogId
         for (int i = 0; i < dialogItems.Length; i++)
         {
