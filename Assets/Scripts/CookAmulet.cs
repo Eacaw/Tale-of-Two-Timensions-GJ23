@@ -5,7 +5,6 @@ public class CookAmulet : MonoBehaviour
     public Light indicatorLight;
     public GameObject LiquidInPot;
     public GameObject AmuletInPot;
-    public CanvasRenderer AmuletUI;
 
     private void Start()
     {
@@ -19,10 +18,13 @@ public class CookAmulet : MonoBehaviour
     {
         LiquidInPot.SetActive(true);
         AmuletInPot.SetActive(true);
-        GameObject.FindGameObjectsWithTag("Player")[0]
-            .GetComponent<PlayerController>()
-            .currentCheckpoint = 11;
-        AmuletUI.SetAlpha(0);
+
+        PlayerController playerController = GameObject.FindGameObjectsWithTag("Player")[0]
+            .GetComponent<PlayerController>();
+        
+        playerController.currentCheckpoint = 11;
+        playerController.SetWizardJuicGUI(0);
+        playerController.SetAmuletGUI(0);
     }
 
     private void OnMouseEnter()

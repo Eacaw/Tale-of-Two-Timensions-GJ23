@@ -25,6 +25,13 @@ public class PlayerController : MonoBehaviour
     public bool hasKey = false;
     public bool hasAmulet = false;
 
+    public CanvasRenderer backpackGUI;
+    public CanvasRenderer keyGUI;
+    public CanvasRenderer amuletGUI;
+    public CanvasRenderer poisonGUI;
+    public CanvasRenderer poisonRumGUI;
+    public CanvasRenderer wizardJuiceGUI;
+
     private Vector3 cameraTargetPosition;
     Transform cameraTransform;
 
@@ -49,6 +56,13 @@ public class PlayerController : MonoBehaviour
         cameraTransform = mainCamera.transform;
         // Set the camera target position to the initial camera position
         cameraTargetPosition = cameraTransform.position;
+
+        backpackGUI.SetAlpha(0);
+        keyGUI.SetAlpha(0);
+        amuletGUI.SetAlpha(0);
+        poisonGUI.SetAlpha(0);
+        poisonRumGUI.SetAlpha(0);
+        wizardJuiceGUI.SetAlpha(0);
     }
 
     void Update()
@@ -86,6 +100,36 @@ public class PlayerController : MonoBehaviour
         }
 
         SetCamera();
+    }
+
+    public void SetBackpackGUI(int alpha) 
+    {
+        backpackGUI.SetAlpha(alpha);
+    }
+
+    public void SetAmuletGUI(int alpha) 
+    {
+        amuletGUI.SetAlpha(alpha);
+    }
+
+    public void SetPoisonGUI(int alpha) 
+    {
+        poisonGUI.SetAlpha(alpha);
+    }
+
+    public void SetKeyGUI(int alpha)
+    {
+        keyGUI.SetAlpha(alpha);
+    }
+
+    public void SetPoisionRumGUI(int alpha)
+    {
+        poisonRumGUI.SetAlpha(alpha);
+    }
+
+    public void SetWizardJuicGUI(int alpha)
+    {
+        wizardJuiceGUI.SetAlpha(alpha);
     }
 
     void Jump()
@@ -179,6 +223,13 @@ public class PlayerController : MonoBehaviour
 
     void TeleportPlayer()
     {
+        DialogueTrigger dialogueTrigger = this.gameObject.GetComponent<DialogueTrigger>();
+        if (dialogueTrigger != null && hasAmulet == false)
+        {
+            dialogueTrigger.TriggerDialogue();
+            return;
+        }
+
         if (SceneManager.GetActiveScene().buildIndex == 1)
         {
             SceneManager.LoadScene(2);
