@@ -23,8 +23,8 @@ public class CookAmulet : MonoBehaviour
             .GetComponent<PlayerController>();
         
         playerController.currentCheckpoint = 11;
-        playerController.SetWizardJuicGUI(0);
-        playerController.SetAmuletGUI(0);
+        playerController.SetWizardJuicGUI(false);
+        playerController.SetAmuletGUI(false);
     }
 
     private void OnMouseEnter()

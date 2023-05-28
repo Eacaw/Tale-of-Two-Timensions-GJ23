@@ -46,7 +46,7 @@ public class BlacksmithDialog : MonoBehaviour
             playerController.currentCheckpoint = 8;
             playerController.hasKilledBlacksmith = true;
         }
-        playerController.SetPoisionRumGUI(0);
+        playerController.SetPoisionRumGUI(false);
     }
 
     void OnMouseEnter()

@@ -25,12 +25,12 @@ public class PlayerController : MonoBehaviour
     public bool hasKey = false;
     public bool hasAmulet = false;
 
-    public CanvasRenderer backpackGUI;
-    public CanvasRenderer keyGUI;
-    public CanvasRenderer amuletGUI;
-    public CanvasRenderer poisonGUI;
-    public CanvasRenderer poisonRumGUI;
-    public CanvasRenderer wizardJuiceGUI;
+    public GameObject backpackUIObject;
+    public GameObject keyUIObject;
+    public GameObject amuletUIObject;
+    public GameObject poisonUIObject;
+    public GameObject poisonRumUIObject;
+    public GameObject wizardJuiceUIObject;
 
     private Vector3 cameraTargetPosition;
     Transform cameraTransform;
@@ -57,12 +57,12 @@ public class PlayerController : MonoBehaviour
         // Set the camera target position to the initial camera position
         cameraTargetPosition = cameraTransform.position;
 
-        backpackGUI.SetAlpha(0);
-        keyGUI.SetAlpha(0);
-        amuletGUI.SetAlpha(0);
-        poisonGUI.SetAlpha(0);
-        poisonRumGUI.SetAlpha(0);
-        wizardJuiceGUI.SetAlpha(0);
+        backpackUIObject.SetActive(false);
+        keyUIObject.SetActive(false);
+        amuletUIObject.SetActive(false);
+        poisonUIObject.SetActive(false);
+        poisonRumUIObject.SetActive(false);
+        wizardJuiceUIObject.SetActive(false);
     }
 
     void Update()
@@ -102,34 +102,34 @@ public class PlayerController : MonoBehaviour
         SetCamera();
     }
 
-    public void SetBackpackGUI(int alpha) 
+    public void SetBackpackGUI(bool alpha)
     {
-        backpackGUI.SetAlpha(alpha);
+        backpackUIObject.SetActive(alpha);
     }
 
-    public void SetAmuletGUI(int alpha) 
+    public void SetAmuletGUI(bool alpha)
     {
-        amuletGUI.SetAlpha(alpha);
+        amuletUIObject.SetActive(alpha);
     }
 
-    public void SetPoisonGUI(int alpha) 
+    public void SetPoisonGUI(bool alpha)
     {
-        poisonGUI.SetAlpha(alpha);
+        poisonUIObject.SetActive(alpha);
     }
 
-    public void SetKeyGUI(int alpha)
+    public void SetKeyGUI(bool alpha)
     {
-        keyGUI.SetAlpha(alpha);
+        keyUIObject.SetActive(alpha);
     }
 
-    public void SetPoisionRumGUI(int alpha)
+    public void SetPoisionRumGUI(bool alpha)
     {
-        poisonRumGUI.SetAlpha(alpha);
+        poisonRumUIObject.SetActive(alpha);
     }
 
-    public void SetWizardJuicGUI(int alpha)
+    public void SetWizardJuicGUI(bool alpha)
     {
-        wizardJuiceGUI.SetAlpha(alpha);
+        wizardJuiceUIObject.SetActive(alpha);
     }
 
     void Jump()
