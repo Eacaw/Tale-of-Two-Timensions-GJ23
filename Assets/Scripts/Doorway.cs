@@ -41,7 +41,7 @@ public class Doorway : MonoBehaviour
 
     public void OnMouseEnter()
     {
-        hoverIndicatorLight.intensity = 5;
+        hoverIndicatorLight.intensity = 12;
     }
 
     public void OnMouseExit()
