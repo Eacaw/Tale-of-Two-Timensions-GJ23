@@ -49,6 +49,9 @@ public class DialogManager : MonoBehaviour
                 SceneManager.LoadScene(1);
                 // get player instance and move them to 000
                 GameObject player = GameObject.Find("Player");
+                PlayerController playerController = player.GetComponent<PlayerController>();
+                playerController.currentYear = "1570";
+                playerController.currentCheckpoint = 0;
                 player.transform.position = new Vector3(-6.0f, 1.6f, 81.33f);
             }
             return;

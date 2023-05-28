@@ -15,8 +15,8 @@ public class GrindeldaPoisonRumScript : MonoBehaviour
 
     public void addPoisonToRum()
     {
-        playerController.SetPoisionRumGUI(100);
-        playerController.SetPoisonGUI(0);
+        playerController.SetPoisionRumGUI(true);
+        playerController.SetPoisonGUI(false);
         playerController.currentCheckpoint = 6;
     }
 }

@@ -42,7 +42,7 @@ public class ItemPickup : MonoBehaviour
 
         if (gameObject.CompareTag("Backpack"))
         {
-            playerController.SetBackpackGUI(100);
+            playerController.SetBackpackGUI(true);
             playerController.hasBackpack = true;
         }
 
@@ -56,26 +56,26 @@ public class ItemPickup : MonoBehaviour
         if (gameObject.CompareTag("Key"))
         {
             playerController.hasKey = true;
-            playerController.SetKeyGUI(100);
+            playerController.SetKeyGUI(true);
             playerController.currentCheckpoint = 9;
         }
 
         if (gameObject.CompareTag("Amulet"))
         {
             playerController.hasAmulet = true;
-            playerController.SetAmuletGUI(100);
+            playerController.SetAmuletGUI(true);
             playerController.currentCheckpoint = 2;
         }
 
         if (gameObject.CompareTag("Poison"))
         {
-            playerController.SetPoisonGUI(100);
+            playerController.SetPoisonGUI(true);
             playerController.currentCheckpoint = 4;
         }
 
         if (gameObject.CompareTag("WizardJuice"))
         {
-            playerController.SetWizardJuicGUI(100); // Maybe?
+            playerController.SetWizardJuicGUI(true); // Maybe?
             playerController.currentCheckpoint = 10;
         }
 

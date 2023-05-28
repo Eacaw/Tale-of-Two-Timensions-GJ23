@@ -1,8 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
-
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class PlayerController : MonoBehaviour
 {
@@ -17,7 +15,7 @@ public class PlayerController : MonoBehaviour
     private float moveSpeed;
     private float walkSpeed = 10.0f;
     private float runSpeed = 16.0f;
-    private float jumpHeight = 15.0f;
+    private float jumpHeight = 7.5f;
     private bool inputDisabled = false;
     private float gravity = 5f;
 
@@ -25,12 +23,17 @@ public class PlayerController : MonoBehaviour
     public bool hasKey = false;
     public bool hasAmulet = false;
 
-    public CanvasRenderer backpackGUI;
-    public CanvasRenderer keyGUI;
-    public CanvasRenderer amuletGUI;
-    public CanvasRenderer poisonGUI;
-    public CanvasRenderer poisonRumGUI;
-    public CanvasRenderer wizardJuiceGUI;
+    public GameObject backpackUIObject;
+    public GameObject keyUIObject;
+    public GameObject amuletUIObject;
+    public GameObject poisonUIObject;
+    public GameObject poisonRumUIObject;
+    public GameObject wizardJuiceUIObject;
+
+    public TMP_Text textMesh;
+    public TMP_Text yearIndicator;
+    public CanvasRenderer yearIndicatorBackground;
+    public string currentYear = "2023";
 
     private Vector3 cameraTargetPosition;
     Transform cameraTransform;
@@ -57,12 +60,16 @@ public class PlayerController : MonoBehaviour
         // Set the camera target position to the initial camera position
         cameraTargetPosition = cameraTransform.position;
 
-        backpackGUI.SetAlpha(0);
-        keyGUI.SetAlpha(0);
-        amuletGUI.SetAlpha(0);
-        poisonGUI.SetAlpha(0);
-        poisonRumGUI.SetAlpha(0);
-        wizardJuiceGUI.SetAlpha(0);
+        backpackUIObject.SetActive(false);
+        keyUIObject.SetActive(false);
+        amuletUIObject.SetActive(false);
+        poisonUIObject.SetActive(false);
+        poisonRumUIObject.SetActive(false);
+        wizardJuiceUIObject.SetActive(false);
+
+        textMesh.gameObject.SetActive(false);
+        yearIndicator.gameObject.SetActive(false);
+        yearIndicatorBackground.gameObject.SetActive(false);
     }
 
     void Update()
@@ -100,36 +107,38 @@ public class PlayerController : MonoBehaviour
         }
 
         SetCamera();
+
+        textMesh.text = currentYear;
     }
 
-    public void SetBackpackGUI(int alpha) 
+    public void SetBackpackGUI(bool alpha)
     {
-        backpackGUI.SetAlpha(alpha);
+        backpackUIObject.SetActive(alpha);
     }
 
-    public void SetAmuletGUI(int alpha) 
+    public void SetAmuletGUI(bool alpha)
     {
-        amuletGUI.SetAlpha(alpha);
+        amuletUIObject.SetActive(alpha);
     }
 
-    public void SetPoisonGUI(int alpha) 
+    public void SetPoisonGUI(bool alpha)
     {
-        poisonGUI.SetAlpha(alpha);
+        poisonUIObject.SetActive(alpha);
     }
 
-    public void SetKeyGUI(int alpha)
+    public void SetKeyGUI(bool alpha)
     {
-        keyGUI.SetAlpha(alpha);
+        keyUIObject.SetActive(alpha);
     }
 
-    public void SetPoisionRumGUI(int alpha)
+    public void SetPoisionRumGUI(bool alpha)
     {
-        poisonRumGUI.SetAlpha(alpha);
+        poisonRumUIObject.SetActive(alpha);
     }
 
-    public void SetWizardJuicGUI(int alpha)
+    public void SetWizardJuicGUI(bool alpha)
     {
-        wizardJuiceGUI.SetAlpha(alpha);
+        wizardJuiceUIObject.SetActive(alpha);
     }
 
     void Jump()
@@ -232,10 +241,12 @@ public class PlayerController : MonoBehaviour
 
         if (SceneManager.GetActiveScene().buildIndex == 1)
         {
+            currentYear = "1550";
             SceneManager.LoadScene(2);
         }
         else
         {
+            currentYear = "1570";
             SceneManager.LoadScene(1);
         }
     }
