@@ -33,11 +33,11 @@ public class GrindeldaDialog : MonoBehaviour
         int currentCheckpoint = GameObject.FindGameObjectsWithTag("Player")[0]
             .GetComponent<PlayerController>()
             .currentCheckpoint;
-        if (currentCheckpoint < 5)
+        if (currentCheckpoint < 4)
         {
             dialogItems[0].TriggerDialogue();
         }
-        else if (currentCheckpoint == 5)
+        else if (currentCheckpoint == 4 || currentCheckpoint == 5)
         {
             dialogItems[1].TriggerDialogue();
             this.gameObject.GetComponent<GrindeldaPoisonRumScript>().addPoisonToRum();
