@@ -41,6 +41,7 @@ public class ItemPickup : MonoBehaviour
         if (gameObject.CompareTag("Key"))
         {
             playerController.hasKey = true;
+            playerController.currentCheckpoint = 9;
         }
 
         if (gameObject.CompareTag("Amulet"))

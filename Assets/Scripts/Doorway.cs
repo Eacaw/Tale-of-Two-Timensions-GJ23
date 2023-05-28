@@ -15,6 +15,17 @@ public class Doorway : MonoBehaviour
 
     public void OnMouseDown()
     {
+        DialogueTrigger dialogueTrigger = this.gameObject.GetComponent<DialogueTrigger>();
+        if (
+            dialogueTrigger != null
+            && this.isLocked == true
+            && GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>().hasKey
+                == false
+        )
+        {
+            dialogueTrigger.TriggerDialogue();
+        }
+
         if (
             isLocked
             && GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>().hasKey

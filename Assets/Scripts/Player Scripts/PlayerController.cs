@@ -35,6 +35,7 @@ public class PlayerController : MonoBehaviour
     // Player checkpoint tracking
     // ------------------------------------------
     public int currentCheckpoint = 0;
+    public bool hasKilledBlacksmith = false;
 
     void Start()
     {
@@ -176,10 +177,17 @@ public class PlayerController : MonoBehaviour
         if (SceneManager.GetActiveScene().buildIndex == 1)
         {
             SceneManager.LoadScene(2);
+            if(this.hasKilledBlacksmith){
+                //find Skeleton and set it to active
+                GameObject.FindGameObjectsWithTag("Skeleton")[0].SetActive(true);
+            } else {
+                GameObject.FindGameObjectsWithTag("Skeleton")[0].SetActive(false);
+            }
         }
         else
         {
             SceneManager.LoadScene(1);
+            
         }
     }
 }
