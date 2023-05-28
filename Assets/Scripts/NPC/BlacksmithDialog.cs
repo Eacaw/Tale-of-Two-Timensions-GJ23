@@ -45,6 +45,7 @@ public class BlacksmithDialog : MonoBehaviour
                 .GetComponent<Animator>()
                 .SetTrigger("isDying");
             playerController.currentCheckpoint = 8;
+            playerController.hasKilledBlacksmith = true;
         }
         PoisonRumUI.SetAlpha(0);
     }
