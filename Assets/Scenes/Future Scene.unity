@@ -7252,9 +7252,10 @@ MonoBehaviour:
     name: Old Wizard
     sentences:
     - Oh, fiddlesticks! The amulet is low on wizard juice!
-    - " It\u2019ll let you travel 20 years through time, but if we hope to travel
-      back to 2023, you\u2019ll need to find some more wizard juice!"
-    - Try The Amazeing Cafe, maybe they have some!
+    - " It\u2019ll let you travel 20 years through time, you should use 'R' on your
+      keyboard to achieve this!"
+    - " If we hope to travel back to 2023, you\u2019ll need to find some more wizard
+      juice! Try The Amazeing Cafe, maybe they have some!"
   DialogID: 2
 --- !u!4 &190983099 stripped
 Transform:
@@ -17526,7 +17527,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hoverIndicatorLight: {fileID: 1669347772}
-  canvasRenderer: {fileID: 0}
 --- !u!114 &422873834
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -28857,7 +28857,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hoverIndicatorLight: {fileID: 60722088}
-  canvasRenderer: {fileID: 0}
 --- !u!65 &694592021
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -33849,7 +33848,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hoverIndicatorLight: {fileID: 1430947336}
-  canvasRenderer: {fileID: 0}
 --- !u!65 &805382711
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -69729,7 +69727,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hoverIndicatorLight: {fileID: 1760460188}
-  canvasRenderer: {fileID: 0}
 --- !u!65 &1657898464
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -85945,7 +85942,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hoverIndicatorLight: {fileID: 790357197}
-  canvasRenderer: {fileID: 0}
 --- !u!114 &1963266255
 MonoBehaviour:
   m_ObjectHideFlags: 0
