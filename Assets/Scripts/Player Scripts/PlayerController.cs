@@ -15,7 +15,7 @@ public class PlayerController : MonoBehaviour
     private float moveSpeed;
     private float walkSpeed = 10.0f;
     private float runSpeed = 16.0f;
-    private float jumpHeight = 15.0f;
+    private float jumpHeight = 7.5f;
     private bool inputDisabled = false;
     private float gravity = 5f;
 
