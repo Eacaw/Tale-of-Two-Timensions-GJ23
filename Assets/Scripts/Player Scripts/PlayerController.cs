@@ -31,6 +31,8 @@ public class PlayerController : MonoBehaviour
     public GameObject wizardJuiceUIObject;
 
     public TMP_Text textMesh;
+    public TMP_Text yearIndicator;
+    public CanvasRenderer yearIndicatorBackground;
     public string currentYear = "2023";
 
     private Vector3 cameraTargetPosition;
@@ -66,6 +68,8 @@ public class PlayerController : MonoBehaviour
         wizardJuiceUIObject.SetActive(false);
 
         textMesh.gameObject.SetActive(false);
+        yearIndicator.gameObject.SetActive(false);
+        yearIndicatorBackground.gameObject.SetActive(false);
     }
 
     void Update()
