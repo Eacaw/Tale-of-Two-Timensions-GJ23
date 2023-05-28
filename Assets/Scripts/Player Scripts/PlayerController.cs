@@ -1,8 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
-
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class PlayerController : MonoBehaviour
 {
@@ -31,6 +29,9 @@ public class PlayerController : MonoBehaviour
     public GameObject poisonUIObject;
     public GameObject poisonRumUIObject;
     public GameObject wizardJuiceUIObject;
+
+    public TMP_Text textMesh;
+    public string currentYear = "2023";
 
     private Vector3 cameraTargetPosition;
     Transform cameraTransform;
@@ -63,6 +64,8 @@ public class PlayerController : MonoBehaviour
         poisonUIObject.SetActive(false);
         poisonRumUIObject.SetActive(false);
         wizardJuiceUIObject.SetActive(false);
+
+        textMesh.gameObject.SetActive(false);
     }
 
     void Update()
@@ -100,6 +103,8 @@ public class PlayerController : MonoBehaviour
         }
 
         SetCamera();
+
+        textMesh.text = currentYear;
     }
 
     public void SetBackpackGUI(bool alpha)
@@ -232,10 +237,12 @@ public class PlayerController : MonoBehaviour
 
         if (SceneManager.GetActiveScene().buildIndex == 1)
         {
+            currentYear = "1550";
             SceneManager.LoadScene(2);
         }
         else
         {
+            currentYear = "1570";
             SceneManager.LoadScene(1);
         }
     }
