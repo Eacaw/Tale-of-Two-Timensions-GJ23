@@ -7,6 +7,8 @@ public class BlacksmithDialog : MonoBehaviour
     private DialogueTrigger[] dialogItems;
     public Light npcIndicatorLight;
 
+    private bool hasDiedAlready = false;
+
     void Start()
     {
         dialogItems = this.gameObject.GetComponents<DialogueTrigger>();
@@ -33,11 +35,16 @@ public class BlacksmithDialog : MonoBehaviour
             0
         ].GetComponent<PlayerController>();
 
+        if(playerController.hasKilledBlacksmith)
+        {
+            dialogItems[2].TriggerDialogue();
+        }
+
         if (playerController.currentCheckpoint < 6)
         {
             dialogItems[0].TriggerDialogue();
         }
-        else if (playerController.currentCheckpoint < 8)
+        else if (playerController.currentCheckpoint < 8 && !this.hasDiedAlready)
         {
             dialogItems[1].TriggerDialogue();
             GameObject.FindGameObjectsWithTag("Blacksmith")[0]
@@ -45,13 +52,10 @@ public class BlacksmithDialog : MonoBehaviour
                 .SetTrigger("isDying");
             playerController.currentCheckpoint = 8;
             playerController.hasKilledBlacksmith = true;
+            this.hasDiedAlready = true;
         }
         
-        if(playerController.hasKilledBlacksmith)
-        {
-            dialogItems[2].TriggerDialogue();
-        }
-
+        
         playerController.SetPoisionRumGUI(false);
     }
 
