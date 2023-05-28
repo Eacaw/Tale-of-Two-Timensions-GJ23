@@ -5182,10 +5182,9 @@ MonoBehaviour:
   dialogue:
     name: Old Wizard
     sentences:
-    - Welcome apprentice! Isn't this a wonderful city?! Wouldn't it be amazing if
-      we could see what the place looked like 500 years ago?
-    - I've got a magical time travel amulet, here, let me use it to take us to the
-      past and have a look...
+    - Here we go, my dear Apprentice! The moment we've been waiting for! Time to
+      test the Magical Time Travel Amulet!
+    - Let's set it to go back 500 seconds in time! Ready? 3 ... 2 ... 1 ...
   DialogID: 0
 --- !u!4 &1656776482 stripped
 Transform:
