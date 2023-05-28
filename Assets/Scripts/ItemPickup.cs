@@ -3,7 +3,6 @@ using UnityEngine;
 public class ItemPickup : MonoBehaviour
 {
     public Light hoverIndicatorLight;
-    public CanvasRenderer canvasRenderer; // Maybe don't need anymore
     private GameObject player;
     private PlayerController playerController;
 
@@ -12,9 +11,6 @@ public class ItemPickup : MonoBehaviour
     private void Start()
     {
         hoverIndicatorLight.intensity = 0;
-
-        // Hide the GUI icon for this item
-        canvasRenderer.SetAlpha(0); // Shouldn't need this anymore
 
         player = GameObject.FindGameObjectWithTag("Player");
         playerController = player.GetComponent<PlayerController>();
@@ -84,7 +80,6 @@ public class ItemPickup : MonoBehaviour
         }
 
         player.GetComponent<Animator>().SetTrigger("pickupItem");
-        canvasRenderer.SetAlpha(100);
         Destroy(gameObject);
     }
 
