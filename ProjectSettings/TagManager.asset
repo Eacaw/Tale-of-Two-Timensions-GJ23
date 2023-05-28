@@ -15,6 +15,7 @@ TagManager:
   - WizardJuice
   - CookAmulet
   - Skeleton
+  - IntroUI
   layers:
   - Default
   - TransparentFX
