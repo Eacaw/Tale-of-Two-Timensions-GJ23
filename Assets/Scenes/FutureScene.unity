@@ -461,7 +461,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hoverIndicatorLight: {fileID: 1896286460}
   destination: {fileID: 638711097}
-  isLocked: 1
+  isLocked: 0
 --- !u!65 &12636164
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2647,7 +2647,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hoverIndicatorLight: {fileID: 1760766125}
   destination: {fileID: 664962689}
-  isLocked: 1
+  isLocked: 0
 --- !u!65 &77879910
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5649,7 +5649,7 @@ MonoBehaviour:
     - "Agh! I\u2019m so sorry my dear apprentice wizard! We\u2019ve accidentally
       travelled back to the year 1570! "
     - 'I got startled by a scary giant horse, and dropped the time travel amulet! '
-    - Quick, take the backpack by the bench, and find the amulet for me!
+    - Quick, my backpack over there, and find the amulet for me!
   DialogID: 0
 --- !u!114 &190784089
 MonoBehaviour:
@@ -18276,7 +18276,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 6747da33e7ca87f479e39c00760d6802, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -45.93
+      value: -40.12
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 6747da33e7ca87f479e39c00760d6802, type: 3}
       propertyPath: m_LocalPosition.y
@@ -18284,7 +18284,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 6747da33e7ca87f479e39c00760d6802, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 159.3
+      value: 143.61
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 6747da33e7ca87f479e39c00760d6802, type: 3}
       propertyPath: m_LocalRotation.w
@@ -18314,6 +18314,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -182.448
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 6747da33e7ca87f479e39c00760d6802, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: c2ecb408961be514bbb378035a1a2e0d, type: 2}
+    - target: {fileID: -7511558181221131132, guid: 6747da33e7ca87f479e39c00760d6802, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 9eb443f9363d7a64090da94d48946b9a, type: 2}
+    - target: {fileID: -7511558181221131132, guid: 6747da33e7ca87f479e39c00760d6802, type: 3}
+      propertyPath: m_Materials.Array.data[3]
+      value: 
+      objectReference: {fileID: 2100000, guid: c2ecb408961be514bbb378035a1a2e0d, type: 2}
     - target: {fileID: 919132149155446097, guid: 6747da33e7ca87f479e39c00760d6802, type: 3}
       propertyPath: m_Name
       value: Backpack
@@ -20495,6 +20507,46 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6964736625367737731, guid: bc05f5b4a6e881c48a4e264eb2e397ce, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7165439936900584794, guid: bc05f5b4a6e881c48a4e264eb2e397ce, type: 3}
+      propertyPath: m_Pivot.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7165439936900584794, guid: bc05f5b4a6e881c48a4e264eb2e397ce, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7165439936900584794, guid: bc05f5b4a6e881c48a4e264eb2e397ce, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7165439936900584794, guid: bc05f5b4a6e881c48a4e264eb2e397ce, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7165439936900584794, guid: bc05f5b4a6e881c48a4e264eb2e397ce, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7165439936900584794, guid: bc05f5b4a6e881c48a4e264eb2e397ce, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7165439936900584794, guid: bc05f5b4a6e881c48a4e264eb2e397ce, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 297
+      objectReference: {fileID: 0}
+    - target: {fileID: 7165439936900584794, guid: bc05f5b4a6e881c48a4e264eb2e397ce, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.000016879783
+      objectReference: {fileID: 0}
+    - target: {fileID: 7165439936900584794, guid: bc05f5b4a6e881c48a4e264eb2e397ce, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7165439936900584794, guid: bc05f5b4a6e881c48a4e264eb2e397ce, type: 3}
+      propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8670917654212715744, guid: bc05f5b4a6e881c48a4e264eb2e397ce, type: 3}
@@ -72102,7 +72154,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5451241881543672436, guid: b7b5a7ad671d3204d959542c9a891b7a, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5451241881543672436, guid: b7b5a7ad671d3204d959542c9a891b7a, type: 3}
       propertyPath: m_TagString
