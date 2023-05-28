@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 0.79
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 0.79}
+  m_IndirectSpecularColor: {r: 0.136967, g: 0.17121147, b: 0.23604381, a: 0.79}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -17809,6 +17809,40 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ab22ded7bd6b3d4c89cc65ad3f57f8d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &422873835
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 422873828}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ea2bd0df68029e4cb6425471168eaf7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue:
+    name: 
+    sentences:
+    - You are too far away, move close to pickup that item.
+  DialogID: 1
+--- !u!114 &422873836
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 422873828}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ea2bd0df68029e4cb6425471168eaf7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue:
+    name: 
+    sentences:
+    - You need a backpack to pickup items!
+  DialogID: 0
 --- !u!1001 &423340753
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -29192,6 +29226,40 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.008358014, y: 0.0072382493, z: 0.009373388}
   m_Center: {x: 0.00000011920929, y: 0.00006227566, z: 0.004413787}
+--- !u!114 &694592022
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 439652638}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ea2bd0df68029e4cb6425471168eaf7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue:
+    name: 
+    sentences:
+    - You are too far away, move close to pickup that item.
+  DialogID: 1
+--- !u!114 &694592023
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 439652638}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ea2bd0df68029e4cb6425471168eaf7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue:
+    name: 
+    sentences:
+    - You need a backpack to pickup items!
+  DialogID: 0
 --- !u!1001 &695154576
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -34150,6 +34218,40 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.020709807, y: 0.013319006, z: 0.02540134}
   m_Center: {x: 0.00069243676, y: -0.0002729278, z: -0.0010807879}
+--- !u!114 &805382712
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 609652413}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ea2bd0df68029e4cb6425471168eaf7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue:
+    name: 
+    sentences:
+    - You are too far away, move close to pickup that item.
+  DialogID: 1
+--- !u!114 &805382713
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 609652413}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ea2bd0df68029e4cb6425471168eaf7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue:
+    name: 
+    sentences:
+    - "\rYou need a backpack to pickup items!"
+  DialogID: 0
 --- !u!4 &807683726 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2883638402381188700, guid: 1a82b6f74263b6744af415fa8296446d, type: 3}
@@ -70814,6 +70916,40 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.016379239, y: 0.015527668, z: 0.012242875}
   m_Center: {x: 0.0012796795, y: 0.00047492384, z: 0.0061837444}
+--- !u!114 &1657898465
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 58931107}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ea2bd0df68029e4cb6425471168eaf7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue:
+    name: 
+    sentences:
+    - You are too far away, move close to pickup that item.
+  DialogID: 1
+--- !u!114 &1657898466
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 58931107}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ea2bd0df68029e4cb6425471168eaf7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue:
+    name: 
+    sentences:
+    - "\rYou need a backpack to pickup items!"
+  DialogID: 0
 --- !u!1001 &1657902616
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -87365,6 +87501,40 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.039484102, y: 0.03170356, z: 0.029659227}
   m_Center: {x: -0.00014268793, y: 0.0015116648, z: 0.010973666}
+--- !u!114 &1963266257
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1963266252}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ea2bd0df68029e4cb6425471168eaf7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue:
+    name: 
+    sentences:
+    - You are too far away, move close to pickup that item.
+  DialogID: 1
+--- !u!114 &1963266258
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1963266252}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ea2bd0df68029e4cb6425471168eaf7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue:
+    name: 
+    sentences:
+    - "\rYou need a backpack to pickup items!"
+  DialogID: 0
 --- !u!4 &1963497423 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5718235487178942902, guid: b37dfe42dfb2a8e4087631ae788a17f9, type: 3}
