@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 0.79
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.136967, g: 0.17121147, b: 0.23604381, a: 0.79}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 0.79}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -10327,6 +10327,11 @@ Transform:
   m_Father: {fileID: 1245078208}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &252177694 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: e780840660b461b4187e23698538a8d2, type: 3}
+  m_PrefabInstance: {fileID: 2005598526}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &252242293 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5299743736537659541, guid: bc05f5b4a6e881c48a4e264eb2e397ce, type: 3}
@@ -17792,6 +17797,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hoverIndicatorLight: {fileID: 1669347772}
   canvasRenderer: {fileID: 1736299185}
+--- !u!114 &422873834
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 422873828}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ab22ded7bd6b3d4c89cc65ad3f57f8d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &423340753
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -18198,6 +18215,11 @@ Transform:
 Transform:
   m_CorrespondingSourceObject: {fileID: 6728525469616471302, guid: 619eb9c17df961d49bb8a363d8f4ddf7, type: 3}
   m_PrefabInstance: {fileID: 1445250064}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &434067704 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: e780840660b461b4187e23698538a8d2, type: 3}
+  m_PrefabInstance: {fileID: 1273727993}
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &434107615 stripped
 Transform:
@@ -20065,6 +20087,11 @@ Transform:
   m_Father: {fileID: 2102062711}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &491208652 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: e780840660b461b4187e23698538a8d2, type: 3}
+  m_PrefabInstance: {fileID: 1893158416}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &493279683
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -23883,6 +23910,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4d7c753abb769c8478984f88fa597131, type: 3}
+--- !u!1 &589467015 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: e780840660b461b4187e23698538a8d2, type: 3}
+  m_PrefabInstance: {fileID: 1712975595}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &590420169
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -30832,6 +30864,11 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: bbb4e4b42233c5249b9b4ce50f0b0b03, type: 3}
   m_PrefabInstance: {fileID: 723113707}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &723128046 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: e780840660b461b4187e23698538a8d2, type: 3}
+  m_PrefabInstance: {fileID: 1038516060}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &726228512
 PrefabInstance:
@@ -43556,6 +43593,18 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: e780840660b461b4187e23698538a8d2, type: 3}
   m_PrefabInstance: {fileID: 1038516060}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1038516062
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 723128046}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ab22ded7bd6b3d4c89cc65ad3f57f8d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1042370476
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -52962,6 +53011,18 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: e780840660b461b4187e23698538a8d2, type: 3}
   m_PrefabInstance: {fileID: 1273727993}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1273727995
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 434067704}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ab22ded7bd6b3d4c89cc65ad3f57f8d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1275073771 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2507356368051936531, guid: 02d8661c24b35934fa7f10601e6f3bc5, type: 3}
@@ -68288,6 +68349,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Skull2
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: b0417adbd2e8de540b0da7b7d9cb70c8, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b0417adbd2e8de540b0da7b7d9cb70c8, type: 3}
 --- !u!4 &1613297782 stripped
@@ -70240,7 +70305,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogue:
-    name: Prison Museum Guide
+    name: Museum Guide
     sentences:
     - 'Welcome to the old prison museum! 20 years ago there was a great escape from
       this prison! '
@@ -74589,6 +74654,18 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: e780840660b461b4187e23698538a8d2, type: 3}
   m_PrefabInstance: {fileID: 1712975595}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1712975597
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 589467015}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ab22ded7bd6b3d4c89cc65ad3f57f8d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1713341925
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -79834,6 +79911,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 02d8661c24b35934fa7f10601e6f3bc5, type: 3}
+--- !u!1 &1820097694 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: b0417adbd2e8de540b0da7b7d9cb70c8, type: 3}
+  m_PrefabInstance: {fileID: 1613297781}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1820097695
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1820097694}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ab22ded7bd6b3d4c89cc65ad3f57f8d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1820390407
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -83543,6 +83637,18 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: e780840660b461b4187e23698538a8d2, type: 3}
   m_PrefabInstance: {fileID: 1893158416}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1893158418
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 491208652}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ab22ded7bd6b3d4c89cc65ad3f57f8d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1893278409
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -89108,6 +89214,18 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: e780840660b461b4187e23698538a8d2, type: 3}
   m_PrefabInstance: {fileID: 2005598526}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2005598528
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 252177694}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ab22ded7bd6b3d4c89cc65ad3f57f8d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &2008117566
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -89184,6 +89302,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2010095382}
+  - component: {fileID: 2010095383}
   m_Layer: 0
   m_Name: SkeletonWithKey
   m_TagString: Skeleton
@@ -89213,6 +89332,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2010095383
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2010095381}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ab22ded7bd6b3d4c89cc65ad3f57f8d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2012269895 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 5d5d05070944025448ea0b6fdeeef619, type: 3}
@@ -95421,7 +95552,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogue:
-    name: 
+    name: Old Wizard
     sentences:
     - "You did it! The amulet is all juiced up! Let\u2019s go back to 2023! But first
       \u2026 I hereby promote you to Master Wizard!!"
@@ -95439,7 +95570,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogue:
-    name: 
+    name: Old Wizard
     sentences:
     - "Huzzah! That\u2019s wizard juice! Well done, apprentice! Boil it in the pot!"
   DialogID: 6
@@ -95456,7 +95587,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogue:
-    name: 
+    name: Old Wizard
     sentences:
     - "Nincompoop! That\u2019s not wizard juice! It\u2019s a key! The Blacksmith\u2019s
       key! It will open the door to \u2026. you can guess, right?"
@@ -95474,7 +95605,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogue:
-    name: 
+    name: Old Wizard
     sentences:
     - "Fool of a wizard! That\u2019s not wizard juice! It\u2019s poison rum! "
     - "Go to the prison! Dispose it down the throat of some no good wrongdoer who\u2019ll
@@ -95493,7 +95624,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogue:
-    name: 
+    name: Old Wizard
     sentences:
     - "Blimey, that\u2019s not wizard juice! It\u2019s poison! Try Grindelda\u2019s
       Fluid Shop, see if she has any!"
