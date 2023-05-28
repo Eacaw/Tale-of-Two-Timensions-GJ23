@@ -3,7 +3,7 @@ using UnityEngine;
 public class ItemPickup : MonoBehaviour
 {
     public Light hoverIndicatorLight;
-    public CanvasRenderer canvasRenderer;
+    public CanvasRenderer canvasRenderer; // Maybe don't need anymore
     private GameObject player;
     private PlayerController playerController;
 
@@ -12,7 +12,7 @@ public class ItemPickup : MonoBehaviour
         hoverIndicatorLight.intensity = 0;
 
         // Hide the GUI icon for this item
-        canvasRenderer.SetAlpha(0);
+        canvasRenderer.SetAlpha(0); // Shouldn't need this anymore
 
         player = GameObject.FindGameObjectWithTag("Player");
         playerController = player.GetComponent<PlayerController>();
@@ -20,8 +20,15 @@ public class ItemPickup : MonoBehaviour
 
     public void OnMouseDown()
     {
+        if (Vector3.Distance(transform.position, player.transform.position) > 6.0f)
+        {
+            Debug.Log("Too far away to pick up item");
+            return;
+        }
+
         if (gameObject.CompareTag("Backpack"))
         {
+            playerController.SetBackpackGUI(100);
             playerController.hasBackpack = true;
         }
 
@@ -31,32 +38,30 @@ public class ItemPickup : MonoBehaviour
             return;
         }
 
-        if (Vector3.Distance(transform.position, player.transform.position) > 6.0f)
-        {
-            Debug.Log("Too far away to pick up item");
-            return;
-        }
-
         // Pickup objects and update player controller
         if (gameObject.CompareTag("Key"))
         {
             playerController.hasKey = true;
+            playerController.SetKeyGUI(100);
             playerController.currentCheckpoint = 9;
         }
 
         if (gameObject.CompareTag("Amulet"))
         {
             playerController.hasAmulet = true;
+            playerController.SetAmuletGUI(100);
             playerController.currentCheckpoint = 2;
         }
 
          if (gameObject.CompareTag("Poison"))
         {
+            playerController.SetPoisonGUI(100);
             playerController.currentCheckpoint = 4;
         }
 
          if (gameObject.CompareTag("WizardJuice"))
         {
+            playerController.SetWizardJuicGUI(100); // Maybe?
             playerController.currentCheckpoint = 10;
         }
 
