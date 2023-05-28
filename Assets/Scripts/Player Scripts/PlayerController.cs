@@ -43,6 +43,7 @@ public class PlayerController : MonoBehaviour
     // ------------------------------------------
     public int currentCheckpoint = 0;
     public bool hasKilledBlacksmith = false;
+    public bool hasTriggeredStartTrigger = false;
 
     void Start()
     {
@@ -152,7 +153,11 @@ public class PlayerController : MonoBehaviour
 
             float speed = isRunning ? runSpeed : walkSpeed;
 
-            playerRigidBody.velocity = new Vector3(movementDirection.x * speed, playerRigidBody.velocity.y, movementDirection.z * speed);
+            playerRigidBody.velocity = new Vector3(
+                movementDirection.x * speed,
+                playerRigidBody.velocity.y,
+                movementDirection.z * speed
+            );
             playerRigidBody.AddForce(Vector3.down * gravity, ForceMode.Acceleration);
 
             transform.rotation = Quaternion.Slerp(
@@ -228,17 +233,10 @@ public class PlayerController : MonoBehaviour
         if (SceneManager.GetActiveScene().buildIndex == 1)
         {
             SceneManager.LoadScene(2);
-            if(this.hasKilledBlacksmith){
-                //find Skeleton and set it to active
-                GameObject.FindGameObjectsWithTag("Skeleton")[0].SetActive(true);
-            } else {
-                GameObject.FindGameObjectsWithTag("Skeleton")[0].SetActive(false);
-            }
         }
         else
         {
             SceneManager.LoadScene(1);
-            
         }
     }
 }

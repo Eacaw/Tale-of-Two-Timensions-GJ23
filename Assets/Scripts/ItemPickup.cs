@@ -7,6 +7,8 @@ public class ItemPickup : MonoBehaviour
     private GameObject player;
     private PlayerController playerController;
 
+    private DialogueTrigger[] dialogItems;
+
     private void Start()
     {
         hoverIndicatorLight.intensity = 0;
@@ -16,13 +18,29 @@ public class ItemPickup : MonoBehaviour
 
         player = GameObject.FindGameObjectWithTag("Player");
         playerController = player.GetComponent<PlayerController>();
+
+        dialogItems = this.gameObject.GetComponents<DialogueTrigger>();
+
+        for (int i = 0; i < dialogItems.Length; i++)
+        {
+            for (int j = i + 1; j < dialogItems.Length; j++)
+            {
+                if (dialogItems[i].DialogID > dialogItems[j].DialogID)
+                {
+                    DialogueTrigger temp = dialogItems[i];
+                    dialogItems[i] = dialogItems[j];
+                    dialogItems[j] = temp;
+                }
+            }
+        }
     }
+
 
     public void OnMouseDown()
     {
         if (Vector3.Distance(transform.position, player.transform.position) > 6.0f)
         {
-            Debug.Log("Too far away to pick up item");
+            dialogItems[1].TriggerDialogue();
             return;
         }
 
@@ -34,7 +52,7 @@ public class ItemPickup : MonoBehaviour
 
         if (!playerController.hasBackpack)
         {
-            Debug.Log("You need a backpack to pick up items");
+            dialogItems[0].TriggerDialogue();
             return;
         }
 
@@ -53,13 +71,13 @@ public class ItemPickup : MonoBehaviour
             playerController.currentCheckpoint = 2;
         }
 
-         if (gameObject.CompareTag("Poison"))
+        if (gameObject.CompareTag("Poison"))
         {
             playerController.SetPoisonGUI(100);
             playerController.currentCheckpoint = 4;
         }
 
-         if (gameObject.CompareTag("WizardJuice"))
+        if (gameObject.CompareTag("WizardJuice"))
         {
             playerController.SetWizardJuicGUI(100); // Maybe?
             playerController.currentCheckpoint = 10;

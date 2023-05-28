@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class WizardDialogScript : MonoBehaviour
 {
@@ -78,6 +79,9 @@ public class WizardDialogScript : MonoBehaviour
         {
             dialogItems[7].TriggerDialogue();
             playerController.currentCheckpoint = 12;
+            // After 5 seconds load scene 4
+            Invoke("LoadScene3", 5);
+
         }
     }
 
@@ -89,5 +93,10 @@ public class WizardDialogScript : MonoBehaviour
     public void OnMouseExit()
     {
         npcIndicatorLight.intensity = 0;
+    }
+
+    public void LoadScene3()
+    {
+        SceneManager.LoadScene(3);
     }
 }
