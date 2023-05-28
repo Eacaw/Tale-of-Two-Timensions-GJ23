@@ -36,6 +36,7 @@ public class PlayerController : MonoBehaviour
     // ------------------------------------------
     public int currentCheckpoint = 0;
     public bool hasKilledBlacksmith = false;
+    public bool hasTriggeredStartTrigger = false;
 
     void Start()
     {

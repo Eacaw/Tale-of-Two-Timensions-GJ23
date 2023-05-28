@@ -3,12 +3,16 @@ using UnityEngine;
 public class LocalDialogTrigger : MonoBehaviour
 {
 
-    private bool hasTriggered = false;
-
     private void OnTriggerEnter(Collider other) {
-        if (other.CompareTag("Player") && !hasTriggered) {
+        // get player instance
+
+        PlayerController playerController = GameObject.FindGameObjectsWithTag("Player")[
+            0
+        ].GetComponent<PlayerController>();
+
+        if (other.CompareTag("Player") && !playerController.hasTriggeredStartTrigger) {
             this.gameObject.GetComponents<DialogueTrigger>()[0].TriggerDialogue();
-            hasTriggered = true;
+            playerController.hasTriggeredStartTrigger = true;
         }
     }
 
