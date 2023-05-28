@@ -6,7 +6,6 @@ public class BlacksmithDialog : MonoBehaviour
 {
     private DialogueTrigger[] dialogItems;
     public Light npcIndicatorLight;
-    public CanvasRenderer PoisonRumUI;
 
     void Start()
     {
@@ -47,7 +46,7 @@ public class BlacksmithDialog : MonoBehaviour
             playerController.currentCheckpoint = 8;
             playerController.hasKilledBlacksmith = true;
         }
-        PoisonRumUI.SetAlpha(0);
+        playerController.SetPoisionRumGUI(0);
     }
 
     void OnMouseEnter()
