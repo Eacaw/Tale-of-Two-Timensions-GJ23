@@ -10284,7 +10284,7 @@ MonoBehaviour:
   invertCameraYAxis: 0
   rotationSpeed: 120
   mainCamera: {fileID: 815180290}
-  GUI: {fileID: 0}
+  GUI: {fileID: 1392556294}
   hasBackpack: 0
   hasKey: 0
   hasAmulet: 0
