@@ -28,6 +28,8 @@ public class StartMenu : MonoBehaviour
 
     public void Controls()
     {
+        PlayButtonSound();
+
         controlsUI.SetActive(true);
     }
 
