@@ -1,6 +1,7 @@
 using UnityEngine;
+using UnityEngine.EventSystems;
 
-public class NPCController : MonoBehaviour
+public class NPCController : MonoBehaviour, IPointerClickHandler
 {
     public float detectionRadius = 5f;
     private Transform player;
@@ -60,7 +61,7 @@ public class NPCController : MonoBehaviour
         textMesh.color = Color.grey;
     }
 
-    public void OnMouseDown()
+    public void OnPointerClick(PointerEventData eventData)
     {
         this.gameObject.GetComponents<DialogueTrigger>()[0].TriggerDialogue();
     }

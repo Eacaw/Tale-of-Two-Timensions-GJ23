@@ -1,6 +1,7 @@
 using UnityEngine;
+using UnityEngine.EventSystems;
 
-public class ItemPickup : MonoBehaviour
+public class ItemPickup : MonoBehaviour, IPointerClickHandler
 {
     public Light hoverIndicatorLight;
     private GameObject player;
@@ -32,7 +33,7 @@ public class ItemPickup : MonoBehaviour
     }
 
 
-    public void OnMouseDown()
+    public void OnPointerClick(PointerEventData eventData)
     {
         if (Vector3.Distance(transform.position, player.transform.position) > 6.0f)
         {

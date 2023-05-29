@@ -1,8 +1,7 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
-public class Doorway : MonoBehaviour
+public class Doorway : MonoBehaviour, IPointerClickHandler
 {
     public Light hoverIndicatorLight;
     public Transform destination;
@@ -13,7 +12,7 @@ public class Doorway : MonoBehaviour
         hoverIndicatorLight.intensity = 0;
     }
 
-    public void OnMouseDown()
+    public void OnPointerClick(PointerEventData eventData)
     {
         DialogueTrigger dialogueTrigger = this.gameObject.GetComponent<DialogueTrigger>();
         if (
