@@ -5,12 +5,18 @@ using UnityEngine.SceneManagement;
 
 public class EndMenu : MonoBehaviour
 {
-    public void ReturnToMain() {
+    void Start()
+    {
         Destroy(GameObject.FindGameObjectsWithTag("Player")[0]);
+    }
+
+    public void ReturnToMain() 
+    {
         SceneManager.LoadScene(0);
     }
 
-    public void QuitGame() {
+    public void QuitGame() 
+    {
         Application.Quit();
     }
 }
