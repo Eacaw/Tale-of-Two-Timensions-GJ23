@@ -5,7 +5,14 @@ using UnityEngine.SceneManagement;
 
 public class StartMenu : MonoBehaviour
 {
+    public GameObject controlsUI;
+    
     [SerializeField] private FMODUnity.EventReference ClickEventPath;
+
+    void Start()
+    {
+        controlsUI.SetActive(false);
+    }
 
     public void StartClick() {
         PlayButtonSound();
@@ -17,6 +24,16 @@ public class StartMenu : MonoBehaviour
         playerController.textMesh.gameObject.SetActive(true);
         playerController.yearIndicator.gameObject.SetActive(true);
         playerController.yearIndicatorBackground.gameObject.SetActive(true);
+    }
+
+    public void Controls()
+    {
+        controlsUI.SetActive(true);
+    }
+
+    public void CloseControls()
+    {
+        controlsUI.SetActive(false);
     }
 
     public void QuitGame() {

@@ -7,11 +7,19 @@ public class PauseMenu : MonoBehaviour
 {
     public static bool GameIsPaused = false;
     public GameObject pauseMenuUI;
+    public GameObject controlsUI;
+
+    private CanvasRenderer controlsCanvas;
+    private PlayerController player;
+    
     [SerializeField] private FMODUnity.EventReference ClickEventPath;
 
     void Start()
     {
         pauseMenuUI.SetActive(false);
+        controlsUI.SetActive(false);
+        
+        player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
     }
 
     void Update()
@@ -33,8 +41,21 @@ public class PauseMenu : MonoBehaviour
         PlayButtonSound();
 
         pauseMenuUI.SetActive(false);
+        CloseControls();
         Time.timeScale = 1f;
         GameIsPaused = false;
+    }
+
+    public void Controls()
+    {
+        player.HideGUI();
+        controlsUI.SetActive(true);
+    }
+
+    public void CloseControls()
+    {
+        player.ShowGUI();
+        controlsUI.SetActive(false);
     }
 
     public void QuitGame()
