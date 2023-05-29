@@ -2589,7 +2589,7 @@ Transform:
   - {fileID: 2145179083}
   - {fileID: 573771740}
   m_Father: {fileID: 0}
-  m_RootOrder: 19
+  m_RootOrder: 23
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &813540164
 PrefabInstance:
@@ -3783,7 +3783,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 15
+  m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1132122642
 MonoBehaviour:
@@ -3807,6 +3807,20 @@ MonoBehaviour:
       Data3: -644422477
       Data4: 1479786500
     Path: event:/Teleport
+  ClickEventPath:
+    Guid:
+      Data1: -53512348
+      Data2: 1180151676
+      Data3: 1646349213
+      Data4: 1242783126
+    Path: event:/Button
+  HmmEventPath:
+    Guid:
+      Data1: -1105743305
+      Data2: 1186692937
+      Data3: -457309037
+      Data4: 1673633294
+    Path: event:/NPC Sound
 --- !u!1001 &1168649630
 PrefabInstance:
   m_ObjectHideFlags: 0

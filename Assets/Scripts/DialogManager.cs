@@ -11,6 +11,8 @@ public class DialogManager : MonoBehaviour
     public TMP_Text nameText;
     public TMP_Text dialogueText;
     [SerializeField] private FMODUnity.EventReference TeleportEventPath;
+    [SerializeField] private FMODUnity.EventReference ClickEventPath;
+    [SerializeField] private FMODUnity.EventReference HmmEventPath;
 
     private Queue<string> sentences;
 
@@ -22,6 +24,8 @@ public class DialogManager : MonoBehaviour
 
     public void StartDialogue(Dialogue dialogue)
     {
+        PlayHmm();
+
         ChatBubbleController.SetActive(true);
         nameText.text = dialogue.name;
 
@@ -41,6 +45,8 @@ public class DialogManager : MonoBehaviour
 
     public void DisplayNextSentence()
     {
+        PlayClick();
+
         if (sentences.Count == 0)
         {
             EndDialogue();
@@ -76,5 +82,23 @@ public class DialogManager : MonoBehaviour
 
         teleport.start();
         teleport.release();
+    }
+
+    void PlayClick()
+    {
+        FMOD.Studio.EventInstance click = FMODUnity.RuntimeManager.CreateInstance(ClickEventPath);
+        FMODUnity.RuntimeManager.AttachInstanceToGameObject(click, transform, GetComponent<Rigidbody>());
+
+        click.start();
+        click.release();
+    }
+
+    void PlayHmm()
+    {
+        FMOD.Studio.EventInstance hmm = FMODUnity.RuntimeManager.CreateInstance(HmmEventPath);
+        FMODUnity.RuntimeManager.AttachInstanceToGameObject(hmm, transform, GetComponent<Rigidbody>());
+
+        hmm.start();
+        hmm.release();
     }
 }
