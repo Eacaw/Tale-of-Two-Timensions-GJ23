@@ -883,7 +883,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pauseMenuUI: {fileID: 6970015593548172075}
-  controlsUI: {fileID: 0}
+  controlsUI: {fileID: 5149137109076353053}
+  ClickEventPath:
+    Guid:
+      Data1: -53512348
+      Data2: 1180151676
+      Data3: 1646349213
+      Data4: 1242783126
+    Path: event:/Button
 --- !u!1 &7231248640392627195
 GameObject:
   m_ObjectHideFlags: 0
@@ -1008,7 +1015,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 5437447171323678862}
         m_TargetAssemblyTypeName: PauseMenu, Assembly-CSharp
-        m_MethodName: Resume
+        m_MethodName: Controls
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1300,5 +1307,10 @@ PrefabInstance:
 --- !u!4 &5014201182997067345 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6641374608010152601, guid: 624ef1c459c53fa42adfa5632c635cec, type: 3}
+  m_PrefabInstance: {fileID: 1854606101704391880}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &5149137109076353053 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6830142623317728469, guid: 624ef1c459c53fa42adfa5632c635cec, type: 3}
   m_PrefabInstance: {fileID: 1854606101704391880}
   m_PrefabAsset: {fileID: 0}
