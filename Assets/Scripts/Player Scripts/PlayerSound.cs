@@ -112,7 +112,6 @@ public class PlayerSound : MonoBehaviour
         FMOD.Studio.EventInstance footstep = FMODUnity.RuntimeManager.CreateInstance(FootstepsEventPath);
         FMODUnity.RuntimeManager.AttachInstanceToGameObject(footstep, transform, GetComponent<Rigidbody>());
 
-
         footstep.setParameterByName(SpeedParameterName, F_PlayerRunning ? 0f : 1f);
         footstep.start();
         footstep.release();
