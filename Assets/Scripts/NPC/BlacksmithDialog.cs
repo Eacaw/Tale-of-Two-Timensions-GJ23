@@ -1,8 +1,7 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
-public class BlacksmithDialog : MonoBehaviour
+public class BlacksmithDialog : MonoBehaviour, IPointerClickHandler
 {
     private DialogueTrigger[] dialogItems;
     public Light npcIndicatorLight;
@@ -29,7 +28,7 @@ public class BlacksmithDialog : MonoBehaviour
         }
     }
 
-    void OnMouseDown()
+    public void OnPointerClick(PointerEventData eventData)
     {
         PlayerController playerController = GameObject.FindGameObjectsWithTag("Player")[
             0

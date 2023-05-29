@@ -1,7 +1,8 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.EventSystems;
 
-public class WizardDialogScript : MonoBehaviour
+public class WizardDialogScript : MonoBehaviour, IPointerClickHandler
 {
     public Light npcIndicatorLight;
     private DialogueTrigger[] dialogItems;
@@ -29,7 +30,7 @@ public class WizardDialogScript : MonoBehaviour
         }
     }
 
-    public void OnMouseDown()
+    public void OnPointerClick(PointerEventData eventData)
     {
         PlayerController playerController = GameObject.FindGameObjectsWithTag("Player")[
             0
