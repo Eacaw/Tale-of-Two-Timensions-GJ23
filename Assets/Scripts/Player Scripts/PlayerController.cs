@@ -54,6 +54,7 @@ public class PlayerController : MonoBehaviour
     public bool hasTriggeredStartTrigger = false;
 
     private FMOD.Studio.Bus masterBus;
+    private FMOD.Studio.Bus ambienceBus;
 
     void Start()
     {
@@ -75,10 +76,11 @@ public class PlayerController : MonoBehaviour
         wizardJuiceUIObject.SetActive(false);
 
         textMesh.gameObject.SetActive(false);
-        yearIndicator.gameObject.SetActive(false);
+        yearIndicator.gameObject.SetActive(false); 
         yearIndicatorBackground.gameObject.SetActive(false);
 
         masterBus = FMODUnity.RuntimeManager.GetBus("Bus:/");
+        ambienceBus = FMODUnity.RuntimeManager.GetBus("port:/Ambience");
     }
 
     void Update()
@@ -276,6 +278,7 @@ public class PlayerController : MonoBehaviour
     void PlayTeleport()
     {
         masterBus.stopAllEvents(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+        ambienceBus.stopAllEvents(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
 
         FMOD.Studio.EventInstance teleport = FMODUnity.RuntimeManager.CreateInstance(
             TeleportEventPath

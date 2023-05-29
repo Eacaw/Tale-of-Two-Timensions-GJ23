@@ -4,6 +4,8 @@ using UnityEngine.EventSystems;
 public class ItemPickup : MonoBehaviour, IPointerClickHandler
 {
     public Light hoverIndicatorLight;
+    [SerializeField] private FMODUnity.EventReference ItemPickupEventPath;
+    [SerializeField] private string ItemParameterName;
     private GameObject player;
     private PlayerController playerController;
 
@@ -45,6 +47,7 @@ public class ItemPickup : MonoBehaviour, IPointerClickHandler
         {
             playerController.SetBackpackGUI(true);
             playerController.hasBackpack = true;
+            PlayItemPickup(0f);
         }
 
         if (!playerController.hasBackpack)
@@ -59,6 +62,7 @@ public class ItemPickup : MonoBehaviour, IPointerClickHandler
             playerController.hasKey = true;
             playerController.SetKeyGUI(true);
             playerController.currentCheckpoint = 9;
+            PlayItemPickup(2f);
         }
 
         if (gameObject.CompareTag("Amulet"))
@@ -66,18 +70,21 @@ public class ItemPickup : MonoBehaviour, IPointerClickHandler
             playerController.hasAmulet = true;
             playerController.SetAmuletGUI(true);
             playerController.currentCheckpoint = 2;
+            PlayItemPickup(1f);
         }
 
         if (gameObject.CompareTag("Poison"))
         {
             playerController.SetPoisonGUI(true);
             playerController.currentCheckpoint = 4;
+            PlayItemPickup(3f);
         }
 
         if (gameObject.CompareTag("WizardJuice"))
         {
             playerController.SetWizardJuicGUI(true); // Maybe?
             playerController.currentCheckpoint = 10;
+            PlayItemPickup(3f);
         }
 
         player.GetComponent<Animator>().SetTrigger("pickupItem");
@@ -92,5 +99,14 @@ public class ItemPickup : MonoBehaviour, IPointerClickHandler
     public void OnMouseExit()
     {
         hoverIndicatorLight.intensity = 0;
+    }
+
+    void PlayItemPickup(float parameter) {
+        FMOD.Studio.EventInstance pickup = FMODUnity.RuntimeManager.CreateInstance(ItemPickupEventPath);
+        FMODUnity.RuntimeManager.AttachInstanceToGameObject(pickup, transform, GetComponent<Rigidbody>());
+
+        pickup.setParameterByName(ItemParameterName, parameter);
+        pickup.start();
+        pickup.release();
     }
 }
