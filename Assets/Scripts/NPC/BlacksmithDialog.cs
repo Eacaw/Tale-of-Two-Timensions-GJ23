@@ -1,11 +1,11 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
-public class BlacksmithDialog : MonoBehaviour
+public class BlacksmithDialog : MonoBehaviour, IPointerClickHandler
 {
     private DialogueTrigger[] dialogItems;
     public Light npcIndicatorLight;
+    [SerializeField] private FMODUnity.EventReference CoughEventPath;
 
     private bool hasDiedAlready = false;
 
@@ -29,7 +29,7 @@ public class BlacksmithDialog : MonoBehaviour
         }
     }
 
-    void OnMouseDown()
+    public void OnPointerClick(PointerEventData eventData)
     {
         PlayerController playerController = GameObject.FindGameObjectsWithTag("Player")[
             0
@@ -53,6 +53,12 @@ public class BlacksmithDialog : MonoBehaviour
             playerController.currentCheckpoint = 8;
             playerController.hasKilledBlacksmith = true;
             this.hasDiedAlready = true;
+
+            FMOD.Studio.EventInstance cough = FMODUnity.RuntimeManager.CreateInstance(CoughEventPath);
+            FMODUnity.RuntimeManager.AttachInstanceToGameObject(cough, transform, GetComponent<Rigidbody>());
+
+            cough.start();
+            cough.release();
         }
         
         

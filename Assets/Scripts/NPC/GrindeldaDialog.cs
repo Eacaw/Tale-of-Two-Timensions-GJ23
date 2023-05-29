@@ -1,8 +1,7 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
-public class GrindeldaDialog : MonoBehaviour
+public class GrindeldaDialog : MonoBehaviour, IPointerClickHandler
 {
     private DialogueTrigger[] dialogItems;
     public Light npcIndicatorLight;
@@ -28,7 +27,7 @@ public class GrindeldaDialog : MonoBehaviour
         }
     }
 
-    void OnMouseDown()
+    public void OnPointerClick(PointerEventData eventData)
     {
         int currentCheckpoint = GameObject.FindGameObjectsWithTag("Player")[0]
             .GetComponent<PlayerController>()

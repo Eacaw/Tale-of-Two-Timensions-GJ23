@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.17337595, g: 0.21672337, b: 0.29878962, a: 1}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -5106,6 +5106,7 @@ GameObject:
   - component: {fileID: 815180292}
   - component: {fileID: 815180290}
   - component: {fileID: 815180291}
+  - component: {fileID: 815180293}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -5184,6 +5185,22 @@ Transform:
   m_Father: {fileID: 1709872249}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &815180293
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 815180289}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c49b4cc203aa6414fae5c798d1d0e7d6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EventMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_MaxRayIntersections: 0
 --- !u!1001 &817710668
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10063,6 +10080,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 625d04e66de962c4a9700abf24d74988, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  TeleportEventPath:
+    Guid:
+      Data1: 79651854
+      Data2: 1236816247
+      Data3: -644422477
+      Data4: 1479786500
+    Path: event:/Teleport
   cameraHeight: 15
   cameraDistance: 7.5
   invertCameraXAxis: 0
@@ -13524,6 +13548,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a56c954c81eac5e49a6d249286f95a53, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ClickEventPath:
+    Guid:
+      Data1: -53512348
+      Data2: 1180151676
+      Data3: 1646349213
+      Data4: 1242783126
+    Path: event:/Button
 --- !u!114 &2103026242
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -42,33 +42,17 @@ public class PlayerSound : MonoBehaviour
         TimeTakenSinceStep += Time.deltaTime;
         DistanceTravelled += (transform.position - PrevPos).magnitude;
 
-        if (Input.GetKeyDown(KeyCode.R))
+        if (!JumpCheck())
         {
-            PlayTeleport();
-        }
-        else {
-            if (!JumpCheck())
-            {
-                if (DistanceTravelled >= StepDistance + StepRandom)
+            if (DistanceTravelled >= StepDistance + StepRandom)
                 {
                     SpeedCheck();
                     StepRandom = Random.Range(0f, 0.5f);
                     DistanceTravelled = 0f;
                 }
             }
-        }
 
         PrevPos = transform.position;
-    }
-
-    void PlayTeleport() {
-        masterBus.stopAllEvents(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
-
-        FMOD.Studio.EventInstance teleport = FMODUnity.RuntimeManager.CreateInstance(TeleportEventPath);
-        FMODUnity.RuntimeManager.AttachInstanceToGameObject(teleport, transform, GetComponent<Rigidbody>());
-
-        teleport.start();
-        teleport.release();
     }
 
     bool JumpCheck() {

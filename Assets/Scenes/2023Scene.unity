@@ -2589,7 +2589,7 @@ Transform:
   - {fileID: 2145179083}
   - {fileID: 573771740}
   m_Father: {fileID: 0}
-  m_RootOrder: 17
+  m_RootOrder: 19
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &813540164
 PrefabInstance:
@@ -3783,7 +3783,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1132122642
 MonoBehaviour:
@@ -3800,6 +3800,13 @@ MonoBehaviour:
   ChatBubbleController: {fileID: 2004052197}
   nameText: {fileID: 2004052196}
   dialogueText: {fileID: 2004052195}
+  TeleportEventPath:
+    Guid:
+      Data1: 79651854
+      Data2: 1236816247
+      Data3: -644422477
+      Data4: 1479786500
+    Path: event:/Teleport
 --- !u!1001 &1168649630
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5674,6 +5681,26 @@ PrefabInstance:
     - target: {fileID: 4157281197156077680, guid: d09ab89d414efd940b4e5eed10c515a6, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5437447171323678862, guid: d09ab89d414efd940b4e5eed10c515a6, type: 3}
+      propertyPath: ClickEventPath.Path
+      value: event:/Button
+      objectReference: {fileID: 0}
+    - target: {fileID: 5437447171323678862, guid: d09ab89d414efd940b4e5eed10c515a6, type: 3}
+      propertyPath: ClickEventPath.Guid.Data1
+      value: -53512348
+      objectReference: {fileID: 0}
+    - target: {fileID: 5437447171323678862, guid: d09ab89d414efd940b4e5eed10c515a6, type: 3}
+      propertyPath: ClickEventPath.Guid.Data2
+      value: 1180151676
+      objectReference: {fileID: 0}
+    - target: {fileID: 5437447171323678862, guid: d09ab89d414efd940b4e5eed10c515a6, type: 3}
+      propertyPath: ClickEventPath.Guid.Data3
+      value: 1646349213
+      objectReference: {fileID: 0}
+    - target: {fileID: 5437447171323678862, guid: d09ab89d414efd940b4e5eed10c515a6, type: 3}
+      propertyPath: ClickEventPath.Guid.Data4
+      value: 1242783126
       objectReference: {fileID: 0}
     - target: {fileID: 7090577398933337240, guid: d09ab89d414efd940b4e5eed10c515a6, type: 3}
       propertyPath: m_Name
