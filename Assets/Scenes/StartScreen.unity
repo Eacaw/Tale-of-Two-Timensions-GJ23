@@ -10063,6 +10063,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 625d04e66de962c4a9700abf24d74988, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  TeleportEventPath:
+    Guid:
+      Data1: 79651854
+      Data2: 1236816247
+      Data3: -644422477
+      Data4: 1479786500
+    Path: event:/Teleport
   cameraHeight: 15
   cameraDistance: 7.5
   invertCameraXAxis: 0
@@ -13524,6 +13531,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a56c954c81eac5e49a6d249286f95a53, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ClickEventPath:
+    Guid:
+      Data1: -53512348
+      Data2: 1180151676
+      Data3: 1646349213
+      Data4: 1242783126
+    Path: event:/Button
 --- !u!114 &2103026242
 MonoBehaviour:
   m_ObjectHideFlags: 0
