@@ -4,7 +4,8 @@ using TMPro;
 
 public class PlayerController : MonoBehaviour
 {
-    [SerializeField] private FMODUnity.EventReference TeleportEventPath;
+    [SerializeField]
+    private FMODUnity.EventReference TeleportEventPath;
 
     public float cameraHeight = 15.0f;
     public float cameraDistance = 7.5f;
@@ -250,23 +251,25 @@ public class PlayerController : MonoBehaviour
 
     void TeleportPlayer()
     {
-        DialogueTrigger dialogueTrigger = this.gameObject.GetComponent<DialogueTrigger>();
-        if (dialogueTrigger != null && hasAmulet == false)
+        if (SceneManager.GetActiveScene().buildIndex != 4)
         {
-            dialogueTrigger.TriggerDialogue();
-            return;
-        }
-
-        PlayTeleport();
-        if (SceneManager.GetActiveScene().buildIndex == 1)
-        {
-            currentYear = "1550";
-            SceneManager.LoadScene(2);
-        }
-        else
-        {
-            currentYear = "1570";
-            SceneManager.LoadScene(1);
+            DialogueTrigger dialogueTrigger = this.gameObject.GetComponent<DialogueTrigger>();
+            if (dialogueTrigger != null && hasAmulet == false)
+            {
+                dialogueTrigger.TriggerDialogue();
+                return;
+            }
+            if (SceneManager.GetActiveScene().buildIndex == 1)
+            {
+                currentYear = "1550";
+                SceneManager.LoadScene(2);
+            }
+            else
+            {
+                currentYear = "1570";
+                SceneManager.LoadScene(1);
+            }
+            PlayTeleport();
         }
     }
 
@@ -274,8 +277,14 @@ public class PlayerController : MonoBehaviour
     {
         masterBus.stopAllEvents(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
 
-        FMOD.Studio.EventInstance teleport = FMODUnity.RuntimeManager.CreateInstance(TeleportEventPath);
-        FMODUnity.RuntimeManager.AttachInstanceToGameObject(teleport, transform, GetComponent<Rigidbody>());
+        FMOD.Studio.EventInstance teleport = FMODUnity.RuntimeManager.CreateInstance(
+            TeleportEventPath
+        );
+        FMODUnity.RuntimeManager.AttachInstanceToGameObject(
+            teleport,
+            transform,
+            GetComponent<Rigidbody>()
+        );
 
         teleport.start();
         teleport.release();
