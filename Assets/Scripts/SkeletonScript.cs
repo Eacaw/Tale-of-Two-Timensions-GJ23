@@ -9,13 +9,10 @@ public class SkeletonScript : MonoBehaviour
         ].GetComponent<PlayerController>();
         if (playerController.hasKilledBlacksmith)
         {
-            Debug.Log("showing skeleton");
             this.gameObject.SetActive(true);
         }
         else
         {
-            Debug.Log("hiding skeleton");
-            
             this.gameObject.SetActive(false);
         }
     }
