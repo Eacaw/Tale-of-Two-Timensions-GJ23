@@ -10189,11 +10189,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TeleportEventPath:
     Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
+      Data1: 79651854
+      Data2: 1236816247
+      Data3: -644422477
+      Data4: 1479786500
+    Path: event:/Teleport
   cameraHeight: 15
   cameraDistance: 7.5
   invertCameraXAxis: 0
