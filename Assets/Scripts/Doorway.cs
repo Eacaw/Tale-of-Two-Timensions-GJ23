@@ -6,6 +6,7 @@ public class Doorway : MonoBehaviour, IPointerClickHandler
     public Light hoverIndicatorLight;
     public Transform destination;
     public bool isLocked = false;
+    [SerializeField] private FMODUnity.EventReference DoorEventPath;
 
     private void Start()
     {
@@ -34,6 +35,7 @@ public class Doorway : MonoBehaviour, IPointerClickHandler
             return;
         }
 
+
         GameObject player = GameObject.FindGameObjectWithTag("Player");
         player.transform.position = destination.position;
     }
@@ -46,5 +48,14 @@ public class Doorway : MonoBehaviour, IPointerClickHandler
     public void OnMouseExit()
     {
         hoverIndicatorLight.intensity = 0;
+    }
+
+    void PlayDoor()
+    {
+        FMOD.Studio.EventInstance door = FMODUnity.RuntimeManager.CreateInstance(DoorEventPath);
+        FMODUnity.RuntimeManager.AttachInstanceToGameObject(door, transform, GetComponent<Rigidbody>());
+
+        door.start();
+        door.release();
     }
 }
