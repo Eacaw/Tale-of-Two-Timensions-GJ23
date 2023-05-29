@@ -12,6 +12,8 @@ public class PlayerController : MonoBehaviour
     public Camera mainCamera;
     private Animator anim;
 
+    public GameObject GUI;
+
     private float moveSpeed;
     private float walkSpeed = 10.0f;
     private float runSpeed = 16.0f;
@@ -139,6 +141,16 @@ public class PlayerController : MonoBehaviour
     public void SetWizardJuicGUI(bool alpha)
     {
         wizardJuiceUIObject.SetActive(alpha);
+    }
+
+    public void HideGUI()
+    {
+        GUI.SetActive(false);
+    }
+
+    public void ShowGUI()
+    {
+        GUI.SetActive(true);
     }
 
     void Jump()
