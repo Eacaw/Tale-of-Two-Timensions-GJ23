@@ -9,6 +9,7 @@ public class DialogManager : MonoBehaviour
     public GameObject ChatBubbleController;
     public TMP_Text nameText;
     public TMP_Text dialogueText;
+    [SerializeField] private FMODUnity.EventReference TeleportEventPath;
 
     private Queue<string> sentences;
 
@@ -44,6 +45,7 @@ public class DialogManager : MonoBehaviour
             EndDialogue();
             if (SceneManager.GetActiveScene().buildIndex == 4)
             {
+                PlayTeleport();
                 // get object with tag introUI and set it to inactive
 
                 SceneManager.LoadScene(1);
@@ -64,5 +66,14 @@ public class DialogManager : MonoBehaviour
     void EndDialogue()
     {
         ChatBubbleController.SetActive(false);
+    }
+
+    void PlayTeleport()
+    {
+        FMOD.Studio.EventInstance teleport = FMODUnity.RuntimeManager.CreateInstance(TeleportEventPath);
+        FMODUnity.RuntimeManager.AttachInstanceToGameObject(teleport, transform, GetComponent<Rigidbody>());
+
+        teleport.start();
+        teleport.release();
     }
 }

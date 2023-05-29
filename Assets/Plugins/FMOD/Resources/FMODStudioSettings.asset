@@ -443,6 +443,8 @@ MonoBehaviour:
   - Master
   Banks:
   - Ambience
+  - GUI
+  - NPC
   - Player
   BanksToLoad: []
   LiveUpdatePort: 9264
