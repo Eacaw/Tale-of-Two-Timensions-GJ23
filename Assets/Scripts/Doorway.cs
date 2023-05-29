@@ -35,7 +35,7 @@ public class Doorway : MonoBehaviour, IPointerClickHandler
             return;
         }
 
-
+        PlayDoor();
         GameObject player = GameObject.FindGameObjectWithTag("Player");
         player.transform.position = destination.position;
     }
