@@ -4,6 +4,8 @@ using TMPro;
 
 public class PlayerController : MonoBehaviour
 {
+    [SerializeField] private FMODUnity.EventReference TeleportEventPath;
+
     public float cameraHeight = 15.0f;
     public float cameraDistance = 7.5f;
     public bool invertCameraXAxis = false;
@@ -48,6 +50,8 @@ public class PlayerController : MonoBehaviour
     public bool hasKilledBlacksmith = false;
     public bool hasTriggeredStartTrigger = false;
 
+    private FMOD.Studio.Bus masterBus;
+
     void Start()
     {
         DontDestroyOnLoad(this.gameObject);
@@ -70,6 +74,8 @@ public class PlayerController : MonoBehaviour
         textMesh.gameObject.SetActive(false);
         yearIndicator.gameObject.SetActive(false);
         yearIndicatorBackground.gameObject.SetActive(false);
+
+        masterBus = FMODUnity.RuntimeManager.GetBus("Bus:/");
     }
 
     void Update()
@@ -239,6 +245,7 @@ public class PlayerController : MonoBehaviour
             return;
         }
 
+        PlayTeleport();
         if (SceneManager.GetActiveScene().buildIndex == 1)
         {
             currentYear = "1550";
@@ -249,5 +256,16 @@ public class PlayerController : MonoBehaviour
             currentYear = "1570";
             SceneManager.LoadScene(1);
         }
+    }
+
+    void PlayTeleport()
+    {
+        masterBus.stopAllEvents(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+
+        FMOD.Studio.EventInstance teleport = FMODUnity.RuntimeManager.CreateInstance(TeleportEventPath);
+        FMODUnity.RuntimeManager.AttachInstanceToGameObject(teleport, transform, GetComponent<Rigidbody>());
+
+        teleport.start();
+        teleport.release();
     }
 }

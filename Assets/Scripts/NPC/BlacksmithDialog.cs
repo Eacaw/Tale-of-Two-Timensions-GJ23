@@ -5,6 +5,7 @@ public class BlacksmithDialog : MonoBehaviour, IPointerClickHandler
 {
     private DialogueTrigger[] dialogItems;
     public Light npcIndicatorLight;
+    [SerializeField] private FMODUnity.EventReference CoughEventPath;
 
     private bool hasDiedAlready = false;
 
@@ -52,6 +53,12 @@ public class BlacksmithDialog : MonoBehaviour, IPointerClickHandler
             playerController.currentCheckpoint = 8;
             playerController.hasKilledBlacksmith = true;
             this.hasDiedAlready = true;
+
+            FMOD.Studio.EventInstance cough = FMODUnity.RuntimeManager.CreateInstance(CoughEventPath);
+            FMODUnity.RuntimeManager.AttachInstanceToGameObject(cough, transform, GetComponent<Rigidbody>());
+
+            cough.start();
+            cough.release();
         }
         
         
