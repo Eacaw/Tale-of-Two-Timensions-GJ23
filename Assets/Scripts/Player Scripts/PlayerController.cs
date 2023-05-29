@@ -16,6 +16,8 @@ public class PlayerController : MonoBehaviour
     private Animator anim;
 
     public GameObject GUI;
+    public GameObject tpGUI;
+    public Animator tpAnim;
 
     private float moveSpeed;
     private float walkSpeed = 10.0f;
@@ -78,6 +80,8 @@ public class PlayerController : MonoBehaviour
         textMesh.gameObject.SetActive(false);
         yearIndicator.gameObject.SetActive(false); 
         yearIndicatorBackground.gameObject.SetActive(false);
+
+        CloseTpGUI();
 
         masterBus = FMODUnity.RuntimeManager.GetBus("Bus:/");
         ambienceBus = FMODUnity.RuntimeManager.GetBus("port:/Ambience");
@@ -261,6 +265,9 @@ public class PlayerController : MonoBehaviour
                 dialogueTrigger.TriggerDialogue();
                 return;
             }
+            tpGUI.SetActive(true);
+            tpAnim.SetTrigger("Opening");
+            Invoke("CloseTpGUI", 1);
             if (SceneManager.GetActiveScene().buildIndex == 1)
             {
                 currentYear = "1550";
@@ -273,6 +280,11 @@ public class PlayerController : MonoBehaviour
             }
             PlayTeleport();
         }
+    }
+
+    void CloseTpGUI()
+    {
+        tpGUI.SetActive(false);
     }
 
     void PlayTeleport()
